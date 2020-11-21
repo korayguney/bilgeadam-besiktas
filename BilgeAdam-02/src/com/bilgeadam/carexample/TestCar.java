@@ -13,11 +13,17 @@ public class TestCar {
         car.setMotor_type("DIESEL");
         car.setSpeed(0);
 
+        Car car2 = new Car("Toyota", 2019, "Benzin", 5, "White", 140, 0);
+        String carbrand = car2.getCar_brand();
+        System.out.println(carbrand);
+
+        /*
         car.accelerateSpeed(100);
         car.accelerateSpeed(200);
         car.decreaseSpeed(20);
         car.decreaseSpeed(90);
 
+ */
         System.out.println("After last break: " + car.getSpeed());
 
 

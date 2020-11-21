@@ -13,6 +13,25 @@ public class Car {
     private int speed;
     private final int max_speed = 220;
 
+    // default constuctor
+    public Car(){
+
+    }
+
+    public Car(int speed){
+        this.speed = speed;
+    }
+
+    public Car(String car_brand, int model_year, String motor_type, int capacity, String color, double engine_power, int speed) {
+        this.car_brand = car_brand;
+        this.model_year = model_year;
+        this.motor_type = motor_type;
+        this.capacity = capacity;
+        this.color = color;
+        this.engine_power = engine_power;
+        this.speed = speed;
+    }
+
     //methods (behaviour)
     public void accelerateSpeed(int speed) {
         this.speed += speed;
