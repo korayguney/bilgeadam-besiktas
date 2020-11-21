@@ -14,7 +14,9 @@ public class TestCar {
         car.setSpeed(0);
 
         Car car2 = new Car("Toyota", 2019, "Benzin", 5, "White", 140, 0);
-        String carbrand = car2.getCar_brand();
+
+        Car car3 = new Car();
+        String carbrand = car3.getCar_brand();
         System.out.println(carbrand);
 
         /*
@@ -23,9 +25,8 @@ public class TestCar {
         car.decreaseSpeed(20);
         car.decreaseSpeed(90);
 
- */
         System.out.println("After last break: " + car.getSpeed());
-
+        */
 
         
         
