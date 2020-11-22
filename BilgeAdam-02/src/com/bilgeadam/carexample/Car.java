@@ -15,8 +15,8 @@ public class Car {
 
     // default constuctor
     public Car(){
-        //this(20);
-        this("Tofaş", 2019, "Benzin", 5, "White", 140, 0);
+        this(20);
+       // this("Tofaş", 2019, "Benzin", 5, "White", 140, 0);
     }
 
     public Car(int speed){

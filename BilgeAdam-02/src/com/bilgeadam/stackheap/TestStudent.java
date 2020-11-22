@@ -8,6 +8,7 @@ public class TestStudent {
         TestCustomer ts;
 
         // Objects are copies their reference
+        // shallow copy (sığ kopyalama)
         Student student1 = new Student();
         student1.setName("Sefa Yıldırım");
         student1.setAddress("Istanbul");
@@ -34,6 +35,7 @@ public class TestStudent {
         System.out.println("a : " + a + ",b: " + b);
 
         // clone example
+        // deep-copy (derin kopyalama)
         Student student3 = (Student) student1.clone();
         System.out.println("Cloned student name :(1) " + student3.getName());
         student1.setName("Koray Guney");
