@@ -18,6 +18,7 @@ public class TestCalculator {
         System.out.println("MULTIPLY : " + multResult);
         System.out.println("POW : " + powResult);
 
+        System.out.println("Test Test");
 
     }
 }
