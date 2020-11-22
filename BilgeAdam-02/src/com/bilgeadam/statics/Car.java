@@ -1,4 +1,4 @@
-package com.bilgeadam.carexample;
+package com.bilgeadam.statics;
 
 public class Car {
 // brand, model year, motor type, capacity, color, engine power and speed
@@ -12,12 +12,10 @@ public class Car {
     private double engine_power;
     private int speed;
     private final int max_speed = 220;
-    private static int counter = 0;
 
     // default constuctor
     public Car(){
         this(20);
-        counter++;
        // this("Tofaş", 2019, "Benzin", 5, "White", 140, 0);
     }
 
@@ -113,17 +111,5 @@ public class Car {
 
     public void setSpeed(int speed) {
         this.speed = speed;
-    }
-
-    public int getMax_speed() {
-        return max_speed;
-    }
-
-    public static int getCounter() {
-        return counter;
-    }
-
-    public static void setCounter(int counter) {
-        Car.counter = counter;
     }
 }
