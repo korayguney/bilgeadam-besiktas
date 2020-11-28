@@ -1,19 +1,22 @@
 package com.bilgeadam.aggregationcomposionchallenge;
 
+import java.util.Arrays;
+
 public class Book {
     private String name;
     private int quantity;
     private double price;
-    private Author author;
+    //private Author author;
+    private Author[] author;
 
-    public Book(String name, int quantity, double price, Author author) {
+    public Book(String name, int quantity, double price, Author[] author) {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
         this.author = author;
     }
 
-    public Book(String name, double price, Author author) {
+    public Book(String name, double price, Author[] author) {
         this.name = name;
         this.price = price;
         this.author = author;
@@ -39,7 +42,7 @@ public class Book {
         this.price = price;
     }
 
-    public Author getAuthor() {
+    public Author[] getAuthor() {
         return author;
     }
 
@@ -49,7 +52,7 @@ public class Book {
                 "name='" + name + '\'' +
                 ", quantity=" + quantity +
                 ", price=" + price +
-                ", author=" + author +
+                ", author=" + Arrays.toString(author) +
                 '}';
     }
 }
