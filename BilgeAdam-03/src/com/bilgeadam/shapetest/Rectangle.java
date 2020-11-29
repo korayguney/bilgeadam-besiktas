@@ -1,23 +1,23 @@
-package com.bilgeadam.penexample;
+package com.bilgeadam.shapetest;
 
-public class Rectangle {
+public class Rectangle extends Shape {
     private int width;
     private int height;
-    private String color;
-
-    public Rectangle() {
-        this.color = "Blue";
-    }
 
     public Rectangle(String color) {
-        this.color = color;
+        super(color);
     }
 
     public Rectangle(int width, int height, String color) {
+        super(color);
         this.width = width;
         this.height = height;
-        this.color = color;
     }
+
+    public void draw(){
+        System.out.println("The area of the rectangle : " + getHeight() * getWidth());
+    }
+
 
     public int getWidth() {
         return width;
@@ -35,11 +35,4 @@ public class Rectangle {
         this.height = height;
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
 }

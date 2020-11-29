@@ -1,4 +1,4 @@
-package com.bilgeadam.penexample;
+package com.bilgeadam.penexamplepoly;
 
 public class TestPen {
 
