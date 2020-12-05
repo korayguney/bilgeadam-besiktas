@@ -13,6 +13,7 @@ public class Floor {
 
     public String getInfo(){
         String retVal = String.format("Floor no: %d\n ",floorNo);
+
         for (Flat f: flats) {
             retVal += f.getInfo();
         }
