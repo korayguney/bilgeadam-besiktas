@@ -1,11 +1,14 @@
 package com.bilgeadam.polymorhintro;
 
+// superclass
 class Animal{
     public void makeSound(){
         System.out.println("No Sound");
     }
 }
 
+
+// subclass
 class Dog extends Animal{
     @Override
     public void makeSound() {
@@ -13,6 +16,7 @@ class Dog extends Animal{
     }
 }
 
+// subclass
 class Cat extends Animal{
     @Override
     public void makeSound() {
