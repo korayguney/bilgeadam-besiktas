@@ -1,4 +1,4 @@
-package com.bilgeadam.exceptionsexp1;
+package com.bilgeadam.exceptionexp1;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

@@ -1,6 +1,4 @@
-package com.bilgeadam.exceptionsexp1;
-
-import jdk.nashorn.internal.runtime.regexp.joni.ScanEnvironment;
+package com.bilgeadam.exceptionexp1;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -23,7 +21,7 @@ public class Exceptions4 {
         System.out.println("Exit from methodA()");
     }
 
-    public static void methodB() throws FileNotFoundException {
+    public static void methodB() throws FileNotFoundException  {
         System.out.println("Entered methodB()");
         methodC();
         System.out.println("Exit from methodB()");

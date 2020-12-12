@@ -1,4 +1,4 @@
-package com.bilgeadam.exceptionsexp1;
+package com.bilgeadam.exceptionexp1;
 
 public class Exceptions3 {
     public static void main(String[] args) {
@@ -13,6 +13,7 @@ public class Exceptions3 {
             methodB();
         } catch (ArithmeticException e) {
             System.out.println("Please check your calculation at callstack");
+           // System.exit(-1);
         }
         System.out.println("Exit from methodA()");
     }
