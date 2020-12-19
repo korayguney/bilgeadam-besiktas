@@ -11,6 +11,7 @@ public class GenericMain {
         //arr.add("Bilgeadam");
         arr.add(33);
         arr.add(44);
+        arr.add(44);
 
         printDouble(arr);
 

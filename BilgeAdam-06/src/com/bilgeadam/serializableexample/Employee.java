@@ -1,6 +1,7 @@
 package com.bilgeadam.serializableexample;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Employee implements Serializable {
 
@@ -9,6 +10,14 @@ public class Employee implements Serializable {
     private String name;
     private transient String address;
     private int age;
+
+    public Employee() {
+    }
+
+    public Employee(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
 
     public String getName() {
         return name;
@@ -32,6 +41,20 @@ public class Employee implements Serializable {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return age == employee.age &&
+                Objects.equals(name, employee.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age);
     }
 
     @Override
