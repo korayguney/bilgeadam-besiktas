@@ -1,5 +1,7 @@
 package com.bilgeadam.setinterface;
 
+import java.util.Objects;
+
 public class Plane implements Comparable<Plane> {
 
     private long id;
@@ -49,17 +51,29 @@ public class Plane implements Comparable<Plane> {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Plane plane = (Plane) o;
+        return id == plane.id;
+    }
 
     @Override
-    public int compareTo(Plane that) {
-        if (this.getName() == null && that.getName() == null) {
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public int compareTo(Plane plane) {
+        int compare = plane.getName().compareTo(this.getName());
+        if(compare == 0) {
             return 0;
-        } else if (this.getName() == null) {
-            return -1;
-        } else if (that.getName() == null) {
+        } else if(compare > 0) {
             return 1;
-        } else {
-            return this.getName().compareTo(that.getName());
+        } else if(compare < 0) {
+            return -1;
         }
+        return 0;
     }
 }
