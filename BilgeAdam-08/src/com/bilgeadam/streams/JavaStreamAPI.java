@@ -1,11 +1,9 @@
 package com.bilgeadam.streams;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class JavaStreamAPI {
 
@@ -15,6 +13,7 @@ public class JavaStreamAPI {
         names.add("Ali");
         names.add("Hasan");
         names.add("Mustafa");
+        names.add("Mehmet");
         names.add("Zeynep");
         names.add("Kemal");
         names.add("Hüseyin");
@@ -99,7 +98,37 @@ public class JavaStreamAPI {
         //names.stream().distinct().sorted().forEach(s -> System.out.println(s));
         names.stream().distinct().sorted((o1, o2) -> o2.compareTo(o1)).forEach(s -> System.out.println(s));
 
+        System.out.println("----- ANYMATCH ------");
+        boolean res = names.stream().distinct().sorted((o1, o2) -> o2.compareTo(o1)).anyMatch(s -> s.startsWith("M"));
+        System.out.println(res);
 
+        System.out.println("-----ALLMATCH ------");
+        boolean res1 = names.stream().distinct().sorted((o1, o2) -> o2.compareTo(o1)).allMatch(s -> s.startsWith("M"));
+        System.out.println(res1);
+
+        System.out.println("-----COLLECT ------");
+        List<String> filteredNames = names.stream().filter(s -> s.startsWith("M")).distinct().collect(Collectors.toList());
+        for (String filteredName : filteredNames) {
+            System.out.println("Filtered name : " + filteredName);
+        }
+
+        System.out.println("----- COUNT ------");
+        long count1 = names.stream().distinct().count();
+        long count2 = names.stream().count();
+
+        System.out.println("The duplicated string number is " + (count2 - count1));
+
+        System.out.println("----- MAX ------");
+        Optional<String> max_res = names.stream().distinct().max((o1, o2) -> o1.compareTo(o2));
+        max_res.ifPresent(s -> System.out.println(s));
+
+        System.out.println("----- MIN ------");
+        Optional<String> min_res = names.parallelStream().distinct().min((o1, o2) -> o1.compareTo(o2));
+        min_res.ifPresent(s -> System.out.println(s));
+
+        System.out.println("----- REDUCE ------");
+        Optional<String> reduce_res = names.stream().distinct().reduce((s, s2) -> s.concat(s2));
+        reduce_res.ifPresent(s -> System.out.println(s));
 
     }
 
