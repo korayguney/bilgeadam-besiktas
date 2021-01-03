@@ -9,7 +9,7 @@ public class LambdaTest {
 
         List<String> list = new ArrayList<>();
         list.add("Ahmet");
-        list.add("Ali");
+        list.add("ali");
         list.add("Ayşe");
         list.add("Bekir");
         list.add("Behçet");
@@ -51,5 +51,14 @@ public class LambdaTest {
         System.out.println("==== GREATER THEN 4 ====");
         analyzeTool.showResult(list, searchStr, (t, s) -> t.length() > 4);
 
+        System.out.println("==== STARTS WITH ====");
+        analyzeTool.showResult(list, searchStr2, new StringAnalyzer() {
+            @Override
+            public boolean analyze(String target, String seachedStr) {
+                return target.toLowerCase().startsWith(seachedStr);
+            }
+        });
+
+        analyzeTool.showResult(list, searchStr2, (t, s) -> t.toLowerCase().startsWith(s));
     }
 }
