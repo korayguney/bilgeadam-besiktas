@@ -7,7 +7,12 @@ public class HelloWorldOuterClass {
         abstract void greetSomeone(String name);
     }
 
-    public void sayHello(){
+    @FunctionalInterface
+    interface HelloWorldInterface {
+        void greetSomeone(String name);
+    }
+
+    public void sayHello() {
         // local inner class
         class EnglishGreeting extends HelloWorld {
             @Override
@@ -35,13 +40,22 @@ public class HelloWorldOuterClass {
         };
 
         frenchGreeting.greetSomeone("Kaan");
-
+/*
         HelloWorld turkishGreeting = new HelloWorld() {
             @Override
             void greetSomeone(String name) {
                 System.out.println("Merhaba " + name);
             }
         };
+ */
+        HelloWorldInterface turkishGreeting = new HelloWorldInterface() {
+            @Override
+            public void greetSomeone(String name) {
+                System.out.println("Merhaba " + name + " FI");
+            }
+        };
+
+        HelloWorldInterface turkishGreeting2 = name -> System.out.println("Merhaba " + name + " FI");
 
         turkishGreeting.greetSomeone("Sefa");
     }
