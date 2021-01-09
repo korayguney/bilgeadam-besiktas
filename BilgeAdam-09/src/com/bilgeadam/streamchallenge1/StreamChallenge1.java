@@ -24,9 +24,13 @@ public class StreamChallenge1 {
         arr.forEach(s -> System.out.println("Remove all empty Strings from List : "+s));
 
         // Create a List with String more than 2 characters
+        arr = strList.stream().filter(s -> s.length() > 2).collect(Collectors.toList());
+        arr.forEach(s -> System.out.println("Create a List with String more than 2 characters : "+s));
 
         List<String> G7 = Arrays.asList("USA", "Japan", "France", "Germany", "Italy", "U.K.","Canada");
         // Convert String to Uppercase and join them using comma
+        String G7countries =G7.stream().map(x -> x.toUpperCase()).collect(Collectors.joining(", "));
+        System.out.println("G7countries : " + G7countries);
 
         List<Integer> numbers = Arrays.asList(9, 10, 3, 4, 7, 3, 4);
         // Create List of square of all distinct numbers
