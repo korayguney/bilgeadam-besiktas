@@ -1,16 +1,14 @@
 package com.bilgeadam.parallelstreams;
 
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Arrays;
-import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 public class ParallelVsSequentialStream {
 
     public static void main(String[] args) {
 
-        String[] strings = {"1", "2", "3", "4" , "5", "6" , "7", "8", "9", "10"};
+        String[] strings = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
 
         System.out.println("Run with sequential (stream())");
         run(Arrays.stream(strings).sequential());

@@ -22,7 +22,7 @@ public class DateBeforeJava8 {
         long currentTime2 = date2.getTime();
         System.out.println("Current time 2: "  + currentTime2);
 
-        SimpleDateFormat sdf =  new SimpleDateFormat("DD/MM/YYYY , hh:mm:ss a");
+        SimpleDateFormat sdf =  new SimpleDateFormat("dd/MM/YYYY , hh:mm:ss a");
         System.out.println("Formatted date : "+sdf.format(date));
 
         Date newDate = (Date)date.clone();
