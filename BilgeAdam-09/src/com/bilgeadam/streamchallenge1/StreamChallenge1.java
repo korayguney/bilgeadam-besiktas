@@ -5,13 +5,19 @@ import java.util.List;
 
 public class StreamChallenge1 {
     public static void main(String[] args) {
-        List<String> strList = Arrays.asList("abc", "", "bcd", "", "defg", "jk");
+        List<String> strList = Arrays.asList("abc", "", "acd", "", "defg", "jk");
         // Count the empty strings
         long result = strList.stream().filter(s -> s.isEmpty()).count();
-        System.out.println("Empty strings amount : " + result);
+        System.out.println("Count of the empty strings : " + result);
 
         // Count String with length more than 3
+        result = strList.stream().filter(s -> s.length() > 3).count();
+        System.out.println("Count String with length more than 3 : " + result);
+
         // Count number of String which starts with "a"
+        result = strList.stream().filter(s -> s.startsWith("a")).count();
+        System.out.println("Count number of String which starts with \"a\" : " + result);
+
         // Remove all empty Strings from List
         // Create a List with String more than 2 characters
 
