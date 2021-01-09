@@ -2,6 +2,7 @@ package com.bilgeadam.streamchallenge1;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StreamChallenge1 {
     public static void main(String[] args) {
@@ -19,6 +20,9 @@ public class StreamChallenge1 {
         System.out.println("Count number of String which starts with \"a\" : " + result);
 
         // Remove all empty Strings from List
+        List<String> arr = strList.stream().filter(s -> !s.isEmpty()).collect(Collectors.toList());
+        arr.forEach(s -> System.out.println("Remove all empty Strings from List : "+s));
+
         // Create a List with String more than 2 characters
 
         List<String> G7 = Arrays.asList("USA", "Japan", "France", "Germany", "Italy", "U.K.","Canada");
