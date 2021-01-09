@@ -1,7 +1,10 @@
 package com.bilgeadam.streamchallenge1;
 
 import java.util.Arrays;
+import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.Optional;
+import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
 public class StreamChallenge1 {
@@ -32,11 +35,20 @@ public class StreamChallenge1 {
         String G7countries =G7.stream().map(x -> x.toUpperCase()).collect(Collectors.joining(", "));
         System.out.println("G7countries : " + G7countries);
 
+        Optional<String> str = G7.stream().map(x -> x.toUpperCase()).reduce((s, s2) -> s +", " +s2);
+        str.ifPresent(System.out::println);
+
         List<Integer> numbers = Arrays.asList(9, 10, 3, 4, 7, 3, 4);
         // Create List of square of all distinct numbers
+        numbers = numbers.stream().map(s -> s * s).distinct().collect(Collectors.toList());
+        numbers.forEach(s-> System.out.println("List of square of all distinct numbers : " + s));
 
         List<Integer> primes = Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19, 23, 29);
         //Get count, min, max, sum, and average for numbers
+        IntSummaryStatistics stats = primes.stream().mapToInt((x) -> x).summaryStatistics();
+        System.out.println("Stats of list : \n" + stats.toString());
+
+
     }
 
 
