@@ -7,9 +7,11 @@ public class StreamChallenge1 {
     public static void main(String[] args) {
         List<String> strList = Arrays.asList("abc", "", "bcd", "", "defg", "jk");
         // Count the empty strings
+        long result = strList.stream().filter(s -> s.isEmpty()).count();
+        System.out.println("Empty strings amount : " + result);
 
         // Count String with length more than 3
-        // Count number of String which startswith "a"
+        // Count number of String which starts with "a"
         // Remove all empty Strings from List
         // Create a List with String more than 2 characters
 
