@@ -1,6 +1,8 @@
 package com.bilgeadam.streamchallenge2;
 
-public class Person {
+import java.util.Comparator;
+
+public class Person implements Comparable<Person> {
     private String firstName;
     private String lastName;
     private int age;
@@ -42,5 +44,15 @@ public class Person {
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+
+    @Override
+    public int compareTo(Person that) {
+        if (this.getAge() != that.getAge()) {
+            return (this.getAge() < that.getAge() ? -1 : 1);
+        }
+
+        return 0;
     }
 }
