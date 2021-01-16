@@ -23,7 +23,7 @@ public class MyFirstThread {
         myFirstThread.start();
         mySecondThread.start();
 
-        ExecutorService exec = Executors.newFixedThreadPool(2);
+        ExecutorService exec = Executors.newFixedThreadPool(4);
         exec.submit(myRunnableThread);
         exec.submit(myFirstThread);
         exec.shutdown();
