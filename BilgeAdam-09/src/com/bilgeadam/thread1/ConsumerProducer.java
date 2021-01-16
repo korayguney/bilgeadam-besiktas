@@ -61,7 +61,7 @@ class Consumer implements Runnable {
             //SharedData.lock.lock();
             for (int i = 0; i < 10; i++) {
                 if (data.flag == true)
-                    synchronized (data) {
+                    synchronized (this) {
                         data.intValue--; // critical section
                     }
                 System.out.println(ThreadColor.ANSI_PURPLE + "Consumer :" + data.intValue);
