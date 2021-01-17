@@ -2,7 +2,7 @@ package com.bilgeadam.jdbc;
 
 import java.sql.*;
 
-public class JDBC_Select {
+public class JDBC_Insert {
 
     public static void main(String[] args) {
 
@@ -15,15 +15,10 @@ public class JDBC_Select {
             Statement stmt = conn.createStatement();
 
             // execute query
-            ResultSet rs = stmt.executeQuery("SELECT * FROM customer2 WHERE id=5;");
+            int affected_row_count = stmt.executeUpdate("INSERT INTO customer(name,age,address) VALUES ('Sefa',26,'Istanbul'); ");
 
-            // process query result
-            while (rs.next()) {
-                System.out.println(
-                        "ID :" + rs.getInt("id") +
-                                ", Name : " + rs.getString("name") +
-                                ", Address : " + rs.getString("address")
-                );
+            if(affected_row_count > 0) {
+                System.out.println("The record inserted");
             }
 
             // close connections
