@@ -8,7 +8,7 @@ public class JDBC_Select {
 
         try {
             // create connection
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bilgeadam_db",
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bilgeadam_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
                     "root", "1234");
 
             // create statement
@@ -21,8 +21,8 @@ public class JDBC_Select {
             while (rs.next()) {
                 System.out.println(
                         "ID :" + rs.getInt("id") +
-                                "Name : " + rs.getString("name") +
-                                "Address : " + rs.getString("address")
+                                ", Name : " + rs.getString("name") +
+                                ", Address : " + rs.getString("address")
                 );
             }
 
