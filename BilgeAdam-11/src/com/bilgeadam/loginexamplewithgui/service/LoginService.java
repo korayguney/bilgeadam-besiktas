@@ -1,6 +1,8 @@
 package com.bilgeadam.loginexamplewithgui.service;
 
+import com.bilgeadam.loginexamplewithgui.exception.ExceptionCode;
 import com.bilgeadam.loginexamplewithgui.model.LoginModel;
+import com.bilgeadam.loginexamplewithgui.model.ResponseModel;
 import com.bilgeadam.sqlinjection.DBUtils;
 
 import java.sql.Connection;
@@ -9,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LoginService {
-    public boolean check_login_credentials_on_db(LoginModel login) {
+    public ResponseModel check_login_credentials_on_db(LoginModel login) {
         Connection connection = DBUtils.getConnection("bilgeadam_db", "root", "1234");
         ResultSet rs = null;
         PreparedStatement psmt = null;
@@ -19,11 +21,12 @@ public class LoginService {
             psmt.setString(2, login.getPassword());
             rs = psmt.executeQuery();
             while (rs.next()){
-                return true;
+                return new ResponseModel(true, null);
             }
-            return false;
+            return new ResponseModel(false, ExceptionCode.USER_IS_NOT_FOUND_ON_DB);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+            return new ResponseModel(false, ExceptionCode.SQL_EXCEPTION_GENERATED);
         } finally {
             try {
                 rs.close();
@@ -34,6 +37,5 @@ public class LoginService {
             }
         }
 
-        return false;
     }
 }

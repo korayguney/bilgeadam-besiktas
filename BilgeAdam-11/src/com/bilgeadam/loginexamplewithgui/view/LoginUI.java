@@ -3,6 +3,7 @@ package com.bilgeadam.loginexamplewithgui.view;
 import com.bilgeadam.loginexamplewithgui.controller.LoginController;
 import com.bilgeadam.loginexamplewithgui.exception.UsernameOrPasswordIsNullException;
 import com.bilgeadam.loginexamplewithgui.model.LoginModel;
+import com.bilgeadam.loginexamplewithgui.model.ResponseModel;
 
 import java.awt.EventQueue;
 
@@ -92,18 +93,38 @@ public class LoginUI {
 	public void check_login_credentials(String username, String password) {
 		LoginModel login = new LoginModel(username, password);
 		LoginController loginController = new LoginController();
-		boolean result = false;
+		ResponseModel response;
+		/*
 		try {
-			result = loginController.control_login_credentials(login);
+			response = loginController.control_login_credentials(login);
 		} catch (UsernameOrPasswordIsNullException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage(),"WARNING",JOptionPane.WARNING_MESSAGE);
 			System.exit(1);
 		}
+		 */
 
-		if(result){
+		response = loginController.control_login_credentials(login);
+
+		if(response.isResult()){
 			JOptionPane.showMessageDialog(null, "Welcome " + username);
 		} else {
-			JOptionPane.showMessageDialog(null, "Your username or password is wrong","WARNING",JOptionPane.WARNING_MESSAGE);
+			String message ="";
+
+			switch (response.getCode()){
+				case SQL_EXCEPTION_GENERATED:
+					message = "An SQLException is thrown";
+					break;
+				case USER_IS_NOT_FOUND_ON_DB:
+					message = "There is no such user";
+					break;
+				case USERNAME_OR_PASSWORD_NULL:
+					message = "You have to enter all credentials";
+					break;
+				default:
+					message = "There is an exception";
+			}
+
+			JOptionPane.showMessageDialog(null, message,"WARNING",JOptionPane.WARNING_MESSAGE);
 		}
 
 	}
