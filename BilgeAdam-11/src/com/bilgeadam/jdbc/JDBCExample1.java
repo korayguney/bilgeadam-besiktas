@@ -18,13 +18,14 @@ public class JDBCExample1 {
             stmt = connection.createStatement();
 
             //execute query
-            String query = "SELECT * FROM customer2 ORDER BY name";
+            String query = "SELECT * FROM customer2 WHERE id = 8";
             ResultSet rs = stmt.executeQuery(query);
 
             // process on result
             while (rs.next()){
-                System.out.printf("ID :%d , Name : %s , Address : %s\n", rs.getInt("id"),
+                System.out.printf("ID :%d , Name : %s , Address : %s,\n", rs.getInt("id"),
                                                     rs.getString("name"), rs.getString("address"));
+                System.out.println("Birth Year : " + rs.getDate("birthdate"));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
