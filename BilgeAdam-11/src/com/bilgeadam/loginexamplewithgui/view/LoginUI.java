@@ -88,6 +88,17 @@ public class LoginUI {
 		lblNewLabel.setIcon(new ImageIcon("D:\\BilgeAdam\\BE\u015E\u0130KTA\u015E-GRUP\\login-icon-3055.png"));
 		lblNewLabel.setBounds(289, 7, 275, 175);
 		frame.getContentPane().add(lblNewLabel);
+
+		JButton loginButton_1 = new JButton("Register");
+		loginButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				new SignupUI().main(null);
+			}
+		});
+		loginButton_1.setFont(new Font("Tahoma", Font.BOLD, 22));
+		loginButton_1.setBounds(479, 385, 154, 57);
+		frame.getContentPane().add(loginButton_1);
 	}
 
 	public void check_login_credentials(String username, String password) {
