@@ -1,6 +1,7 @@
 package com.bilgeadam.loginexamplewithgui.view;
 
 import com.bilgeadam.loginexamplewithgui.controller.LoginController;
+import com.bilgeadam.loginexamplewithgui.exception.UsernameOrPasswordIsNullException;
 import com.bilgeadam.loginexamplewithgui.model.LoginModel;
 
 import java.awt.EventQueue;
@@ -91,7 +92,13 @@ public class LoginUI {
 	public void check_login_credentials(String username, String password) {
 		LoginModel login = new LoginModel(username, password);
 		LoginController loginController = new LoginController();
-		boolean result = loginController.control_login_credentials(login);
+		boolean result = false;
+		try {
+			result = loginController.control_login_credentials(login);
+		} catch (UsernameOrPasswordIsNullException e) {
+			JOptionPane.showMessageDialog(null, e.getMessage(),"WARNING",JOptionPane.WARNING_MESSAGE);
+			System.exit(1);
+		}
 
 		if(result){
 			JOptionPane.showMessageDialog(null, "Welcome " + username);
