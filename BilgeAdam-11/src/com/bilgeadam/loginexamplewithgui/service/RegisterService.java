@@ -1,14 +1,12 @@
 package com.bilgeadam.loginexamplewithgui.service;
 
 import com.bilgeadam.loginexamplewithgui.exception.ExceptionCode;
-import com.bilgeadam.loginexamplewithgui.model.LoginModel;
 import com.bilgeadam.loginexamplewithgui.model.RegisterModel;
 import com.bilgeadam.loginexamplewithgui.model.ResponseModel;
-import com.bilgeadam.sqlinjection.DBUtils;
+import com.bilgeadam.loginexamplewithgui.utils.DBUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class RegisterService {
