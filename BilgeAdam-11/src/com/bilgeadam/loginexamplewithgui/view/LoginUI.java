@@ -133,6 +133,9 @@ public class LoginUI {
 				case USERNAME_OR_PASSWORD_NULL:
 					message = "You have to enter all credentials";
 					break;
+				case CASE_SENSETIVE_EXCEPTION:
+					message = "Your username is not right, because of case-sensivity...";
+					break;
 				default:
 					message = "There is an exception";
 			}
