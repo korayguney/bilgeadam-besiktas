@@ -22,7 +22,12 @@ public class RegisterController {
            if(registerModel.getUsername().length() < 1 || registerModel.getPassword().length() < 1){
                return new ResponseModel(false, ExceptionCode.USERNAME_OR_PASSWORD_NULL);
            }
-           return new RegisterService().saveUserToDB(registerModel);
+           model = new RegisterService().checkUsernameIsExistOrNotOnDB(registerModel);
+           if(model.isResult()){
+               return new RegisterService().saveUserToDB(registerModel);
+           } else {
+               return model;
+           }
        } else {
            return model;
        }

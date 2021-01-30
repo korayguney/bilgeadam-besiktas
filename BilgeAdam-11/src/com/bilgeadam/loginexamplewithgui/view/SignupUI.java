@@ -116,6 +116,9 @@ public class SignupUI {
                 case USERNAME_OR_PASSWORD_NULL:
                     message = "You have to enter all credentials";
                     break;
+                case USERNAME_IS_ALREADY_REGISTERED:
+                    message = "Username is already registered! Select different username!";
+                    break;
                 default:
                     message = "There is an exception";
             }
