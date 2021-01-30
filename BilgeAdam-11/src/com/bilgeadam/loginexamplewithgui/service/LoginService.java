@@ -12,7 +12,8 @@ import java.sql.SQLException;
 
 public class LoginService {
     public ResponseModel check_login_credentials_on_db(LoginModel login) {
-        Connection connection = DBUtils.getConnection("bilgeadam_db", "root", "1234");
+        //Connection connection = DBUtils.getConnection("bilgeadam_db", "root", "1234");
+        Connection connection = DBUtils.getConnection();
         ResultSet rs = null;
         PreparedStatement psmt = null;
         try {

@@ -27,6 +27,8 @@ public class LoginUI {
 				try {
 					LoginUI window = new LoginUI();
 					window.frame.setVisible(true);
+					UIManager.setLookAndFeel(
+							UIManager.getSystemLookAndFeelClassName());
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

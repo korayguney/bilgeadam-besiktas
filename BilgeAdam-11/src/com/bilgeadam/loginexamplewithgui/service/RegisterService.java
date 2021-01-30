@@ -13,7 +13,8 @@ import java.sql.SQLException;
 public class RegisterService {
 
     public ResponseModel saveUserToDB(RegisterModel registerModel) {
-        Connection connection = DBUtils.getConnection("bilgeadam_db", "root", "1234");
+        //Connection connection = DBUtils.getConnection("bilgeadam_db", "root", "1234");
+        Connection connection = DBUtils.getConnection();
         PreparedStatement psmt = null;
         try {
             psmt = connection.prepareStatement("INSERT INTO login(username,password) VALUES (?,?)");
@@ -38,7 +39,8 @@ public class RegisterService {
     }
 
     public ResponseModel checkUsernameIsExistOrNotOnDB(RegisterModel registerModel) {
-        Connection connection = DBUtils.getConnection("bilgeadam_db", "root", "1234");
+       // Connection connection = DBUtils.getConnection("bilgeadam_db", "root", "1234");
+        Connection connection = DBUtils.getConnection();
         ResultSet rs = null;
         PreparedStatement psmt = null;
         try {
