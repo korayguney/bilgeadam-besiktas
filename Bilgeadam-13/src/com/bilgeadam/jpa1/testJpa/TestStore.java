@@ -123,7 +123,7 @@ public class TestStore {
 
     // INSERT DATA
     private static void persistStore(List<Store> storeList) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("postgrePU");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysqlPU");
         EntityManager em = emf.createEntityManager();
 
         em.getTransaction().begin();
