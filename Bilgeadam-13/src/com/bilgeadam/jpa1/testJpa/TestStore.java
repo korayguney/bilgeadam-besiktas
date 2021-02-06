@@ -7,6 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class TestStore {
     public static void main(String[] args) {
@@ -26,14 +27,27 @@ public class TestStore {
         storeList.add(store5);
         storeList.add(store6);
 
-        //persistStore(storeList);
-
-
+        persistStore(storeList);
         //findStore(5);
         //updateStore( 3, "Zorlu AVM");
         //updateStore("Akasya AVM", "Zorlu AVM");
         //deleteStore(2);
-        deleteStore(store6);
+        //deleteStore(store6);
+        //findAllStore();
+    }
+
+    private static void findAllStore() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysqlPU");
+        EntityManager em = emf.createEntityManager();
+
+        List<Store> stores = em.createQuery("FROM Store", Store.class).getResultList();
+
+        stores.stream().forEach(store -> System.out.println(store));
+
+
+        em.clear();
+        em.close();
+        emf.close();
     }
 
     // DELETE DATA
@@ -73,6 +87,7 @@ public class TestStore {
         emf.close();
     }
 
+    // UPDATE DATA
     private static void updateStore(int storeId, String updated_name) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysqlPU");
         EntityManager em = emf.createEntityManager();
@@ -108,7 +123,7 @@ public class TestStore {
 
     // INSERT DATA
     private static void persistStore(List<Store> storeList) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysqlPU");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("postgrePU");
         EntityManager em = emf.createEntityManager();
 
         em.getTransaction().begin();
