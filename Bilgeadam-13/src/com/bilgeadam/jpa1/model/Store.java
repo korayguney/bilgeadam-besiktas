@@ -1,6 +1,18 @@
 package com.bilgeadam.jpa1.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 // POJO --> Plain Old Java Object (Model)
+@Entity
+@Table(name = "storedata")
 public class Store {
+
+    @Id
+    @GeneratedValue
+    private int id;
     private String storeName;
     private double storeArea;
     private String storeAddress;
@@ -36,6 +48,14 @@ public class Store {
 
     public void setStoreAddress(String storeAddress) {
         this.storeAddress = storeAddress;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
