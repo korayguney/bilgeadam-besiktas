@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@NamedQueries({@NamedQuery(name = "findAllBooks", query = "FROM Book"),
+                @NamedQuery(name = "findBookById", query = "FROM Book b WHERE b.id=?")})
+@NamedNativeQueries({@NamedNativeQuery(name = "findByISBNNo", query = "SELECT * FROM book WHERE ISBNNumber= ?", resultClass = Book.class)})
 @EntityListeners(value = {LoadDataListener.class})
 public class Book {
     @Id

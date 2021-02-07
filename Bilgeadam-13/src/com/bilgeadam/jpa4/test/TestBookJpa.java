@@ -1,6 +1,5 @@
 package com.bilgeadam.jpa4.test;
 
-import com.bilgeadam.jpa2.test.TestCar;
 import com.bilgeadam.jpa2.utils.EntityManagerUtils;
 import com.bilgeadam.jpa4.models.Author;
 import com.bilgeadam.jpa4.models.Book;
@@ -17,6 +16,7 @@ import java.util.List;
 public class TestBookJpa {
     private static final Logger logger = Logger.getLogger(TestBookJpa.class);
     private static BookService service = null;
+
     public static void main(String[] args) {
 
         BasicConfigurator.configure();
@@ -25,7 +25,26 @@ public class TestBookJpa {
         service = new BookService();
         //persistTestData();
         //findAllBooks();
-        findBookById(4);
+        //findBookById(4);
+        //findBookByISBN(4364265424L);
+        saveBookToDb();
+    }
+
+    private static void saveBookToDb() {
+        Book book = new Book("Hobbit", 463756347L, 36.50);
+        Author author = service.findAuthorById(2);
+        book.setAuthor(author);
+        book.setCategory(Category.FANTASTIC);
+        Library library = service.findLibraryById(1);
+        book.getLibraries().add(library);
+
+        service.saveToDatabase(book);
+        logger.info("BOOK SAVED: " + book.getBookname());
+    }
+
+    private static void findBookByISBN(long isbn) {
+        Book b = service.findBookByISBN(isbn);
+        logger.info(b);
     }
 
     private static void findBookById(int id) {

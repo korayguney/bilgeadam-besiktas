@@ -1,5 +1,7 @@
 package com.bilgeadam.jpa4.services;
 
+import com.bilgeadam.jpa4.models.Author;
+import com.bilgeadam.jpa4.models.Library;
 import com.bilgeadam.jpa4.utils.EntityManagerUtils;
 import com.bilgeadam.jpa4.models.Book;
 import com.bilgeadam.jpa4.repository.CrudRepository;
@@ -16,7 +18,8 @@ public class BookService implements CrudRepository<Book> {
 
         List<Book> books;
         try {
-            books = em.createQuery("FROM Book", Book.class).getResultList();
+            //books = em.createQuery("FROM Book", Book.class).getResultList();
+            books = em.createNamedQuery("findAllBooks").getResultList();
         } finally {
             EntityManagerUtils.closeEntityManager(em);
         }
@@ -29,7 +32,21 @@ public class BookService implements CrudRepository<Book> {
 
         Book book;
         try {
-            book = em.find(Book.class, id);
+            //book = em.find(Book.class, id);
+            book = em.createNamedQuery("findBookById", Book.class).setParameter(0,id).getSingleResult();
+        } finally {
+            EntityManagerUtils.closeEntityManager(em);
+        }
+
+        return book;
+    }
+
+    public Book findBookByISBN(long isbn) {
+        em = EntityManagerUtils.getEntityManager("mysqlPU");
+
+        Book book;
+        try {
+            book = em.createNamedQuery("findByISBNNo", Book.class).setParameter(1,isbn).getSingleResult();
         } finally {
             EntityManagerUtils.closeEntityManager(em);
         }
@@ -38,8 +55,16 @@ public class BookService implements CrudRepository<Book> {
     }
 
     @Override
-    public void saveToDatabase(Book object) {
+    public void saveToDatabase(Book book) {
+        em = EntityManagerUtils.getEntityManager("mysqlPU");
 
+        try {
+            em.getTransaction().begin();
+            em.persist(book);
+        } finally {
+            em.getTransaction().commit();
+            EntityManagerUtils.closeEntityManager(em);
+        }
     }
 
     @Override
@@ -60,5 +85,32 @@ public class BookService implements CrudRepository<Book> {
     @Override
     public boolean isExistsOnDatabase(Book object) {
         return false;
+    }
+
+
+    public Author findAuthorById(int id) {
+        em = EntityManagerUtils.getEntityManager("mysqlPU");
+
+        Author author;
+        try {
+            author = em.find(Author.class, id);
+        } finally {
+            EntityManagerUtils.closeEntityManager(em);
+        }
+
+        return author;
+    }
+
+    public Library findLibraryById(int id) {
+        em = EntityManagerUtils.getEntityManager("mysqlPU");
+
+        Library library;
+        try {
+            library = em.find(Library.class, id);
+        } finally {
+            EntityManagerUtils.closeEntityManager(em);
+        }
+
+        return library;
     }
 }
