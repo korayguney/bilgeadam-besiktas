@@ -27,13 +27,31 @@ public class TestStore {
         storeList.add(store5);
         storeList.add(store6);
 
-        persistStore(storeList);
+        //persistStore(storeList);
         //findStore(5);
         //updateStore( 3, "Zorlu AVM");
         //updateStore("Akasya AVM", "Zorlu AVM");
         //deleteStore(2);
         //deleteStore(store6);
         //findAllStore();
+        findStoreById(3);
+    }
+
+    private static void findStoreById(int storeId) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysqlPU");
+        EntityManager em = emf.createEntityManager();
+
+        //Store store = em.find(Store.class, storeId);
+        // JPQL --> Java Persistence Query Language
+        //Store store = em.createQuery("FROM Store s WHERE s.id =:sId", Store.class).setParameter("sId",storeId).getSingleResult();
+        //Store store = em.createQuery("FROM Store s WHERE s.id =?", Store.class).setParameter(0,storeId).getSingleResult();
+        Store store = (Store) em.createNativeQuery("SELECT * FROM jpadb.storedata WHERE id=1", "storemapping").getSingleResult();
+        System.out.println(store);
+
+        em.clear();
+        em.close();
+        emf.close();
+
     }
 
     private static void findAllStore() {

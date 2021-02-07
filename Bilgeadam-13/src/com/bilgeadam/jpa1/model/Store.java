@@ -1,18 +1,24 @@
 package com.bilgeadam.jpa1.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 // POJO --> Plain Old Java Object (Model)
 @Entity
 @Table(name = "storedata")
+@SqlResultSetMapping(name = "storemapping",classes = @ConstructorResult(
+        targetClass = Store.class, columns = {
+                @ColumnResult(name = "store_addr"),
+                @ColumnResult(name = "storeArea"),
+                @ColumnResult(name = "storeAddress"),
+}
+))
 public class Store {
 
     @Id
     @GeneratedValue
     private int id;
+
+    @Column(name = "store_addr", length = 50, nullable = false)
     private String storeName;
     private double storeArea;
     private String storeAddress;
