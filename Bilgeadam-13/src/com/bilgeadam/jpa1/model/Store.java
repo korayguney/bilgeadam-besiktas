@@ -3,7 +3,7 @@ package com.bilgeadam.jpa1.model;
 import javax.persistence.*;
 
 // POJO --> Plain Old Java Object (Model)
-@Entity
+//@Entity
 @Table(name = "storedata")
 @SqlResultSetMapping(name = "storemapping",classes = @ConstructorResult(
         targetClass = Store.class, columns = {
