@@ -1,10 +1,13 @@
 package com.bilgeadam.jpa4.models;
 
+import com.bilgeadam.jpa4.listeners.LoadDataListener;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@EntityListeners(value = {LoadDataListener.class})
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

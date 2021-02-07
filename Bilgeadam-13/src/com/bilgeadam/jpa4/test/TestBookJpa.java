@@ -1,23 +1,44 @@
 package com.bilgeadam.jpa4.test;
 
+import com.bilgeadam.jpa2.test.TestCar;
 import com.bilgeadam.jpa2.utils.EntityManagerUtils;
 import com.bilgeadam.jpa4.models.Author;
 import com.bilgeadam.jpa4.models.Book;
 import com.bilgeadam.jpa4.models.Category;
 import com.bilgeadam.jpa4.models.Library;
+import com.bilgeadam.jpa4.services.BookService;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 public class TestBookJpa {
-
+    private static final Logger logger = Logger.getLogger(TestBookJpa.class);
+    private static BookService service = null;
     public static void main(String[] args) {
 
         BasicConfigurator.configure();
         Logger.getRootLogger().setLevel(Level.INFO);
-        persistTestData();
+
+        service = new BookService();
+        //persistTestData();
+        //findAllBooks();
+        findBookById(4);
+    }
+
+    private static void findBookById(int id) {
+        Book b = service.findById(id);
+        logger.info(b);
+    }
+
+    private static void findAllBooks() {
+
+        List<Book> books = service.findAll();
+        for (Book book : books) {
+            logger.info(book);
+        }
     }
 
     private static void persistTestData() {
