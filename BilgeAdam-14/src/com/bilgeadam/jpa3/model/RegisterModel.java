@@ -2,10 +2,9 @@ package com.bilgeadam.jpa3.model;
 
 import java.util.Objects;
 
-// POJO ---> Plain Old Java Object
+
 public class RegisterModel {
 
-    // variables
     private int id;
     private String username;
     private String password;

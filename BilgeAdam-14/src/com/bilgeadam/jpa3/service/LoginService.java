@@ -2,56 +2,29 @@ package com.bilgeadam.jpa3.service;
 
 import com.bilgeadam.jpa3.exception.ExceptionCode;
 import com.bilgeadam.jpa3.model.LoginModel;
+import com.bilgeadam.jpa3.model.RegisterModel;
 import com.bilgeadam.jpa3.model.ResponseModel;
-import com.bilgeadam.jpa3.utils.DBUtils;
+import com.bilgeadam.jpa3.utils.EntityManagerUtils;
 
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import javax.persistence.EntityManager;
+import java.util.List;
+
 
 public class LoginService {
     public ResponseModel check_login_credentials_on_db(LoginModel login) {
-        //Connection connection = DBUtils.getConnection("bilgeadam_db", "root", "1234");
-        Connection connection = DBUtils.getConnection();
-        ResultSet rs = null;
-        //PreparedStatement psmt = null;
-        CallableStatement csmt = null;
+        EntityManager em = EntityManagerUtils.getEntityManager("mysqlPU");
+        List<LoginModel> loginModelList = em.createQuery("from LoginModel l WHERE l.username =:username AND l.password =:password")
+                .setParameter("username", login.getUsername()).setParameter("password", login.getPassword())
+                .getResultList();
+
         try {
-            /*
-            psmt = connection.prepareStatement("SELECT * FROM login WHERE username = ? AND password = ?");
-            psmt.setString(1, login.getUsername());
-            psmt.setString(2, login.getPassword());
-             */
-
-            csmt = connection.prepareCall("{CALL login_checker(?,?)}");
-            csmt.setString(1, login.getUsername());
-            csmt.setString(2, login.getPassword());
-
-            //rs = psmt.executeQuery();
-            rs = csmt.executeQuery();
-
-            while (rs.next()){
-                if(!login.getUsername().equals(rs.getString("username"))){
-                    System.out.println("The username is not equal because of case sensivity...");
-                    return new ResponseModel(false, ExceptionCode.CASE_SENSETIVE_EXCEPTION);
-                }
+            if(loginModelList.size() > 0){
                 return new ResponseModel(true, null);
+            } else {
+                return new ResponseModel(false, ExceptionCode.USER_IS_NOT_FOUND_ON_DB);
             }
-            return new ResponseModel(false, ExceptionCode.USER_IS_NOT_FOUND_ON_DB);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-            return new ResponseModel(false, ExceptionCode.SQL_EXCEPTION_GENERATED);
         } finally {
-            try {
-                rs.close();
-                csmt.close();
-                //psmt.close();
-                connection.close();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
+            EntityManagerUtils.closeEntityManager(em);
         }
-
     }
 }

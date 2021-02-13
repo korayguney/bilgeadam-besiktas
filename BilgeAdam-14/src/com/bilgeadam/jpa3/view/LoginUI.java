@@ -122,8 +122,8 @@ public class LoginUI {
 			String message ="";
 
 			switch (response.getCode()){
-				case SQL_EXCEPTION_GENERATED:
-					message = "An SQLException is thrown";
+				case HIBERNATE_TRANSACTION_EXCEPTION_GENERATED:
+					message = "An Transactional exception is thrown";
 					break;
 				case USER_IS_NOT_FOUND_ON_DB:
 					message = "There is no such user";

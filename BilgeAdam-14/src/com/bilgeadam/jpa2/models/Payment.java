@@ -4,8 +4,8 @@ import javax.persistence.*;
 
 // Superclass
 //@MappedSuperclass
-@Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+//@Entity
+//@Inheritance(strategy = InheritanceType.JOINED)
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

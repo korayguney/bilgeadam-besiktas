@@ -3,7 +3,7 @@ package com.bilgeadam.jpa2.models;
 import javax.persistence.Entity;
 import java.time.LocalDate;
 
-@Entity
+//@Entity
 public class CreditCard extends Payment {
     private long cardNumber;
     private String type;

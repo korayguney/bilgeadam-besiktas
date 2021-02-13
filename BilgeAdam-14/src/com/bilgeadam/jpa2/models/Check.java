@@ -3,8 +3,8 @@ package com.bilgeadam.jpa2.models;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "check_pay")
+//@Entity
+//@Table(name = "check_pay")
 public class Check extends Payment {
 
     private String name;
