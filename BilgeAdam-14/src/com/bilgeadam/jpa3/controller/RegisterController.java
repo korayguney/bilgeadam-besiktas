@@ -1,9 +1,9 @@
 package com.bilgeadam.jpa3.controller;
 
-import com.bilgeadam.loginexamplewithgui.exception.ExceptionCode;
-import com.bilgeadam.loginexamplewithgui.model.RegisterModel;
-import com.bilgeadam.loginexamplewithgui.model.ResponseModel;
-import com.bilgeadam.loginexamplewithgui.service.RegisterService;
+import com.bilgeadam.jpa3.exception.ExceptionCode;
+import com.bilgeadam.jpa3.model.RegisterModel;
+import com.bilgeadam.jpa3.model.ResponseModel;
+import com.bilgeadam.jpa3.service.RegisterService;
 
 import javax.swing.*;
 

@@ -1,6 +1,6 @@
 package com.bilgeadam.jpa3.model;
 
-import com.bilgeadam.loginexamplewithgui.exception.ExceptionCode;
+import com.bilgeadam.jpa3.exception.ExceptionCode;
 
 public class ResponseModel {
     private boolean result;

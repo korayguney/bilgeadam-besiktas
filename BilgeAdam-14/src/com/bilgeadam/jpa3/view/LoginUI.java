@@ -1,8 +1,9 @@
-package com.bilgeadam.jpa3;
+package com.bilgeadam.jpa3.view;
 
-import com.bilgeadam.loginexamplewithgui.controller.LoginController;
-import com.bilgeadam.loginexamplewithgui.model.LoginModel;
-import com.bilgeadam.loginexamplewithgui.model.ResponseModel;
+
+import com.bilgeadam.jpa3.controller.LoginController;
+import com.bilgeadam.jpa3.model.LoginModel;
+import com.bilgeadam.jpa3.model.ResponseModel;
 
 import javax.swing.*;
 import java.awt.*;

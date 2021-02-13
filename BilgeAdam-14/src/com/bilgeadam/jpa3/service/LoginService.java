@@ -1,9 +1,9 @@
-package com.bilgeadam.jpa3;
+package com.bilgeadam.jpa3.service;
 
-import com.bilgeadam.loginexamplewithgui.exception.ExceptionCode;
-import com.bilgeadam.loginexamplewithgui.model.LoginModel;
-import com.bilgeadam.loginexamplewithgui.model.ResponseModel;
-import com.bilgeadam.loginexamplewithgui.utils.DBUtils;
+import com.bilgeadam.jpa3.exception.ExceptionCode;
+import com.bilgeadam.jpa3.model.LoginModel;
+import com.bilgeadam.jpa3.model.ResponseModel;
+import com.bilgeadam.jpa3.utils.DBUtils;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;

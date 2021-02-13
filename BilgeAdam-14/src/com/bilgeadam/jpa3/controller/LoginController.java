@@ -1,9 +1,9 @@
 package com.bilgeadam.jpa3.controller;
 
-import com.bilgeadam.loginexamplewithgui.exception.ExceptionCode;
-import com.bilgeadam.loginexamplewithgui.model.LoginModel;
-import com.bilgeadam.loginexamplewithgui.model.ResponseModel;
-import com.bilgeadam.loginexamplewithgui.service.LoginService;
+import com.bilgeadam.jpa3.exception.ExceptionCode;
+import com.bilgeadam.jpa3.model.LoginModel;
+import com.bilgeadam.jpa3.model.ResponseModel;
+import com.bilgeadam.jpa3.service.LoginService;
 
 public class LoginController {
 
