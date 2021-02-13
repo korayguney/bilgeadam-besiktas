@@ -1,10 +1,12 @@
-package com.bilgeadam.jpa1.model;
+package bilgeadam.jpa1.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
 
 //@Entity
-//@Table(name = "phone")
 public class Phone implements Serializable {
 
     private static final long serialVersionUID = 1234567L;
