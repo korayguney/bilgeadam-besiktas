@@ -1,10 +1,14 @@
 package com.bilgeadam.jpa1.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "phone")
-public class Phone {
+public class Phone implements Serializable {
+
+    private static final long serialVersionUID = 1234567L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
