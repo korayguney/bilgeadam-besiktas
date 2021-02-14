@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BilgeAdam HTML Course</title>
+    <style>
+        .button {
+            border-radius: 4px;
+            background-color: #f4511e;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <button class="button"><a href="index.html"> <span>Hover </span></a></button>
+    <h1>Java &nbsp;&nbsp;&nbsp; Course</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>Java Course</h2>
+    <h3>Java Course</h3>
+    <h4>Java Course</h4>
+    <h5>Java Course</h5>
+    <h6>Java Course</h6>
+
+    <hr>
+
+    <h4>Ordered List</h4>
+    <li>Fenerbahçe</li>
+    <ol>
+        <li>Mesut Özil</li>
+        <li>Altay Bayındır</li>
+        <li>Furkan Okçu</li>
+    </ol>
+    <li>Galatasaray</li>
+    <li>Beşiktaş</li>
+
+    <hr>
+    <h4>Ordered List</h4>
+    <li>Fenerbahçe</li>
+    <ul>
+        <li>Mesut Özil</li>
+        <li>Altay Bayındır</li>
+        <li>Furkan Okçu</li>
+    </ul>
+    <li>Galatasaray</li>
+    <li>Beşiktaş</li>
+
+    <hr>
+
+    <table border="2px" style="border: 3px;border-color: blue; padding: 2px; margin:2px;">
+        <tr>
+            <th>Banana</th>
+            <th>Orange</th>
+            <th>Lemon</th>
+        </tr>
+        <tr>
+            <td colspan="2">2.15</td>
+            <td rowspan="2">3.00</td>
+        </tr>
+        <tr>
+            <td>3.78</td>
+            <td>2.00</td>
+        </tr>
+
+    </table>
+
+<hr>
+
+    <table>
+        <tr>
+            <th>Month</th>
+            <th>Savings</th>
+            <th>Savings for holiday!</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+            <td rowspan="2">$50</td>
+        </tr>
+        <tr>
+            <td>February</td>
+            <td>$80</td>
+        </tr>
+    </table>
+
+
+<hr>
+
+<form action="">
+    <table>
+        <tr>
+            <td>Username :</td>
+            <td><input type="text" name="username" size="15" maxlength="30" required="required"></td>
+        </tr>
+
+        <tr>
+            <td>Password :</td>
+            <td><input type="password" name="password" size="15"  required="required"></td>
+        </tr>
+    </table>
+    <input type="submit" value="Login" id="button-1">
+</form>
+
+    <hr>
+    <form action="">
+        <p>Write your comments: </p>
+        <textarea rows="5" cols="20"></textarea>
+
+    </form>
+
+    <hr>
+    <form action="">
+       <input type="radio" name="gender" value="male">Male</input>
+       <input type="radio" name="gender" value="female">Female</input>
+       <input type="radio" name="gender" value="notprefered"  checked="checked" >Not Prefered</input>
+        <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+
+    <fieldset style="width: 350px">
+        <legend >Favorite TV Platforms</legend>
+        <form action="">
+            <input type="checkbox" name="tvplatform" value="netflix"  checked="checked" >Netflix</input>
+            <input type="checkbox" name="tvplatform" value="blue">BlueTV</input>
+            <input type="checkbox" name="tvplatform" value="exxen">Exxen</input>
+            <input type="submit" class="button"><span>Submit</span></input>
+        </form>
+    </fieldset>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+</body>
+</html>
