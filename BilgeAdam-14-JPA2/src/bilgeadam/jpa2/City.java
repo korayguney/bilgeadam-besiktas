@@ -1,5 +1,7 @@
 package bilgeadam.jpa2;
 
+import com.sun.istack.internal.NotNull;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +13,8 @@ public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @NotNull
     private String name;
     private String countryCode;
 

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libraries no="1" charset="utf-8" developer="korayguney">
+    <developer name="Koray" surname="Guney"/>
+    <library>
+        <books>
+            <book>
+                <id>1</id>
+                <name>Yüzüklerin Efendisi 1</name>
+                <ISBNNumber>5632465326724</ISBNNumber>
+                <price>53</price>
+                <author>
+                    <a_id>1</a_id>
+                    <fullname>J.R.R.Tolkien</fullname>
+                    <address>England</address>
+                </author>
+                <author>
+                    <a_id>2</a_id>
+                    <fullname>J.R.R.Tolkien</fullname>
+                    <address>Belgium</address>
+                </author>
+            </book>
+            <book>
+                <id>2</id>
+                <name>Yüzüklerin Efendisi 2</name>
+                <ISBNNumber>5632465326724</ISBNNumber>
+                <price>53</price>
+                <author>
+                    <a_id>1</a_id>
+                    <fullname>J.R.R.Tolkien</fullname>
+                    <address>England</address>
+                </author>
+                <author>
+                    <a_id>2</a_id>
+                    <fullname>J.R.R.Tolkien</fullname>
+                    <address>Belgium</address>
+                </author>
+            </book>
+
+        </books>
+
+    </library>
+    <library>
+        <books>
+            <book>
+                <id>1</id>
+                <name>Yüzüklerin Efendisi 1</name>
+                <ISBNNumber>5632465326724</ISBNNumber>
+                <price>53</price>
+                <author>
+                    <a_id>1</a_id>
+                    <fullname>J.R.R.Tolkien</fullname>
+                    <address>England</address>
+                </author>
+                <author>
+                    <a_id>2</a_id>
+                    <fullname>J.R.R.Tolkien</fullname>
+                    <address>Belgium</address>
+                </author>
+            </book>
+            <book>
+                <id>2</id>
+                <name>Yüzüklerin Efendisi 2</name>
+                <ISBNNumber>5632465326724</ISBNNumber>
+                <price>53</price>
+                <author>
+                    <a_id>1</a_id>
+                    <fullname>J.R.R.Tolkien</fullname>
+                    <address>England</address>
+                </author>
+                <author>
+                    <a_id>2</a_id>
+                    <fullname>J.R.R.Tolkien</fullname>
+                    <address>Belgium</address>
+                </author>
+            </book>
+
+        </books>
+
+    </library>
+
+
+</libraries>

@@ -1,9 +1,11 @@
 package com.bilgeadam.jpa2.models;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import java.time.LocalDate;
 
-//@Entity
+@Entity
+@DiscriminatorValue("2")
 public class CreditCard extends Payment {
     private long cardNumber;
     private String type;

@@ -2,7 +2,7 @@ package com.bilgeadam.jpa2.models;
 
 import javax.persistence.Entity;
 
-//@Entity
+@Entity
 public class Cash extends Payment {
 
     private String cashTendered;

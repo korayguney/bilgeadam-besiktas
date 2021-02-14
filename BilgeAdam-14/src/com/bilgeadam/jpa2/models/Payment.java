@@ -4,8 +4,9 @@ import javax.persistence.*;
 
 // Superclass
 //@MappedSuperclass
-//@Entity
-//@Inheritance(strategy = InheritanceType.JOINED)
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "Payment_Type",discriminatorType = DiscriminatorType.INTEGER)
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

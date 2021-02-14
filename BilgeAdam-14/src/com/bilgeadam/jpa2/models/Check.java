@@ -1,10 +1,12 @@
 package com.bilgeadam.jpa2.models;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-//@Entity
-//@Table(name = "check_pay")
+@Entity
+@Table(name = "check_pay")
+@DiscriminatorValue("1")
 public class Check extends Payment {
 
     private String name;
