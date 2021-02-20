@@ -1,6 +1,8 @@
 package com.bilgeadam.clients;
 
 import com.bilgeadam.models.*;
+import com.bilgeadam.services.CustomerService;
+import com.bilgeadam.services.VehicleService;
 import com.bilgeadam.utils.EntityManagerUtils;
 
 import javax.persistence.EntityManager;
@@ -8,8 +10,34 @@ import java.time.LocalDate;
 import java.time.Month;
 
 public class InsuranceClient {
+    static CustomerService customerService = new CustomerService();
 
     public static void main(String[] args) {
+        //persistTestData();
+        //List<Customer> customers = customerService.findAll();
+        //customers.stream().forEach(System.out::println);
+        //Customer customer = customerService.findById(1);
+        //System.out.println("FOUND CUSTOMER : " + customer);
+
+        //Customer customer = new Customer("Koray Guney","Istanbul",7843284327L);
+        //customerService.saveToDatabase(customer);
+        //boolean result = customerService.isExistsOnDatabase(746546523L);
+        //System.out.println("Is Kaan on DB ? : " + result);
+        /*
+        List<Vehicle> vehicles = customerService.findVehiclesOfCustomer(74654652334L);
+        for (Vehicle vehicle : vehicles) {
+            System.out.println("Kaan's vehicle : " + vehicle.getModel());
+        }
+        */
+        //Customer customer1 = new Customer("Furkan Okçu","Diyarbakır",453245265423L);
+        //customerService.deleteFromDatabase(customer1);
+
+        new VehicleService().findAll().stream().forEach(System.out::println);
+
+    }
+
+
+    private static void persistTestData() {
         Customer customer1 = new Customer("Furkan Okçu","Diyarbakır",453245265423L);
         Customer customer2 = new Customer("Kaan Keskin","Istanbul",74654652334L);
 

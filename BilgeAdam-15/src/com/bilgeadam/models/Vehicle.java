@@ -14,7 +14,7 @@ public class Vehicle {
     private int year;
     private String plate;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Customer customer;
 
     @ManyToMany
