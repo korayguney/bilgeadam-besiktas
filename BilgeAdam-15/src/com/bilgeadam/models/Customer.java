@@ -11,6 +11,7 @@ public class Customer {
     private int id;
     private String name;
     private String address;
+    @Column(unique = true)
     private long SSID;
 
     @OneToMany(mappedBy = "customer")
