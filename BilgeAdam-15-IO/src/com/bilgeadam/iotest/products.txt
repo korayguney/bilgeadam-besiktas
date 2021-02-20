@@ -1,0 +1,15 @@
+computer-toshiba-2000
+computer-dell-2340
+phone-iphone-3500
+computer-asus-1970
+phone-lg-2800
+tablet-ipad-1250
+tablet-samsung-1100
+tablet-asus-1350
+tablet-fujitsu-1000
+phone-samsung-3200
+phone-lenovo-1800
+tablet-casper-800
+phone-venus-1900
+computer-mac-5000
+computer-fujitsu-3500
