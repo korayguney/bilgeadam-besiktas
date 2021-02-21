@@ -6,8 +6,8 @@ public class FileCopy {
 
     public static void main(String[] args) {
 
-        String inputFile = "D:/BilgeAdam/BEŞİKTAŞ-GRUP/test-io/nasa.jpg";
-        String outputFile = "D:/BilgeAdam/BEŞİKTAŞ-GRUP/test-io/nasa-copy.jpg";
+        String inputFile = "BilgeAdam-05/resources/nasa.jpg";
+        String outputFile = "BilgeAdam-05/resources/nasa-copy.jpg";
 
         File file = new File(inputFile);
         System.out.println("File has the lenght of " + file.length() + " bytes");

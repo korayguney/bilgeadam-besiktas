@@ -6,8 +6,8 @@ public class FileCopyWithBuffer2 {
 
     public static void main(String[] args) {
 
-        String inputFile = "C:\\Users\\koray\\IdeaProjects\\BilgeAdam-Besiktas\\BilgeAdam-05\\resources\\nasa.jpg"; // "./BilgeAdam-05/resources/nasa.jpg";  --> relative path
-        String outputFile = "./BilgeAdam-05/resources/nasa-copy.jpg";
+        String inputFile = "BilgeAdam-05/resources/nasa.jpg"; // "./BilgeAdam-05/resources/nasa.jpg";  --> relative path
+        String outputFile = "BilgeAdam-05/resources/nasa-copy.jpg";
 
         File file = new File(inputFile);
         System.out.println("File has the lenght of " + file.length() + " bytes");

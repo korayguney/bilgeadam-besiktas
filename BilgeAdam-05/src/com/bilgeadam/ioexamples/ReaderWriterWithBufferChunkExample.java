@@ -8,8 +8,8 @@ public class ReaderWriterWithBufferChunkExample {
         Reader reader = null;
         Writer writer = null;
         try {
-            reader = new FileReader(new File("C:\\Users\\koray\\IdeaProjects\\BilgeAdam-Besiktas\\BilgeAdam-05\\resources\\story.txt"));
-            writer = new FileWriter(new File("C:\\Users\\koray\\IdeaProjects\\BilgeAdam-Besiktas\\BilgeAdam-05\\resources\\story-copy.txt"));
+            reader = new FileReader(new File("BilgeAdam-05\\resources\\story.txt"));
+            writer = new FileWriter(new File("BilgeAdam-05\\resources\\story-copy.txt"));
 
             int readByte;
             long count = 0;

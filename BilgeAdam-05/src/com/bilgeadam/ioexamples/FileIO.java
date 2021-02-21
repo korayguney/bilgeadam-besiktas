@@ -8,10 +8,10 @@ public class FileIO {
 
         File directory1 = new File("D:\\BilgeAdam\\BEŞİKTAŞ-GRUP\\test-io");
         File directory2 = new File("D:\\BilgeAdam\\BEŞİKTAŞ-GRUP\\test-io-2");
-        File file1 = new File("D:/BilgeAdam/BEŞİKTAŞ-GRUP/test-io/test.txt");
-        File file2 = new File("D:/BilgeAdam/BEŞİKTAŞ-GRUP/test-io/test2.txt");
-        File image1 = new File("D:/BilgeAdam/BEŞİKTAŞ-GRUP/test-io/fb.jpg");
-        File image2 = new File("D:/BilgeAdam/BEŞİKTAŞ-GRUP/test-io/gs.jpg");
+        File file1 = new File("BilgeAdam-05\\resources\\test.txt");
+        File file2 = new File("BilgeAdam-05\\resources\\test2.txt");
+        File image1 = new File("BilgeAdam-05\\resources\\fb.jpg");
+        File image2 = new File("BilgeAdam-05\\resources\\gs.jpg");
 
         System.out.println("Is directory exists? : " + directory1.exists());
         System.out.println("Is txt exists? : " + file1.exists());

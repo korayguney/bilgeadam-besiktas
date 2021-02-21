@@ -9,7 +9,7 @@ public class ProductParser {
         Reader reader = null;
         BufferedReader bufferedReader = null;
         try {
-            reader = new FileReader("C:\\Users\\koray\\IdeaProjects\\BilgeAdam-Besiktas\\BilgeAdam-15-IO\\src\\com\\bilgeadam\\iotest\\products.txt");
+            reader = new FileReader(new File("BilgeAdam-15-IO/src/com/bilgeadam/iotest/products.txt"));
             bufferedReader = new BufferedReader(reader);
 
             String line;
