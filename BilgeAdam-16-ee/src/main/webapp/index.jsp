@@ -15,7 +15,8 @@
 %>
 
 <p>Hello <%=name %></p>
-
+<br>
+<a href="securelogout">Log out</a>
 
 </body>
 </html>
