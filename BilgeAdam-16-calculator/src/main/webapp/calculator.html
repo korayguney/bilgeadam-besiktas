@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<form action="calculator" method="post">
+    <table>
+        <tr>
+            <td> Write your first digit :</td>
+            <td><input type="text" name="firstdigit"></td>
+        </tr>
+
+        <tr>
+            <td> Write your second digit :</td>
+            <td><input type="text" name="seconddigit"></td>
+        </tr>
+
+        <tr>
+            <td> Selected Operations :</td>
+            <td>
+                <select name="operations">
+                    <option value="multiply">Multiply</option>
+                    <option value="sum">Sum</option>
+                    <option value="subtract">Subtract</option>
+                    <option value="divide">Divide</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td align="right"><input type="submit" value="Send"></td>
+        </tr>
+
+    </table>
+</form>
+
+<form action="calculator" method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Write your first digit :</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Digit" name="firstdigit">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Write your second digit :</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Second Digit" name="seconddigit">
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="multiply" value="multiply" checked>
+        <label class="form-check-label" for="multiply">
+            Multiply
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="sum"  value="sum">
+        <label class="form-check-label" for="sum">
+            Sum
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="divide" value="divide">
+        <label class="form-check-label" for="divide">
+            Divide
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="subtract"  value="subtract">
+        <label class="form-check-label" for="subtract">
+            Subtract
+        </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</body>
+</html>
