@@ -9,7 +9,42 @@
     <br>
     &nbsp;&nbsp;&nbsp;<a href="forward">Go to Google</a>
     <br>
+    <br>
     &nbsp;&nbsp;&nbsp;<a href="forward" class="btn btn-danger" role="button">Go To Google</a>
     <br>
+    <br>
+    &nbsp;&nbsp;&nbsp;<a href="first?name=Koray" class="btn btn-warning" role="button">Go To First Servlet</a>
+    <br>
+    <br>
+    <form action="welcome" method="post">
+        <table>
+            <tr>
+                <td>First Name :</td>
+                <td><input name="fname" type="text"></td>
+            </tr>
+            <tr>
+                <td>Last Name :</td>
+                <td><input name="lname" type="text"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Send"></td>
+            </tr>
+        </table>
+    </form>
+    <br>
+    <hr/>
+
+    <form action="welcome" method="post">
+        <div class="form-group">
+            <label for="fnamefield">First name</label>
+            <input type="text" class="form-control" id="fnamefield" aria-describedby="emailHelp" placeholder="Enter Firstname" name="fname">
+        </div>
+        <div class="form-group">
+            <label for="lnamefield">Last Name</label>
+            <input type="text" class="form-control" id="lnamefield" placeholder="Enter Lastname" name="lname">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </body>
 </html>

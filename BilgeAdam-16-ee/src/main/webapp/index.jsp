@@ -9,5 +9,13 @@
 </h1>
 <br/>
 <a href="hello-servlet?name=Koray&surname=Guney">Hello Servlet</a>
+
+<%
+    String name = (String) request.getSession().getAttribute("username");
+%>
+
+<p>Hello <%=name %></p>
+
+
 </body>
 </html>
