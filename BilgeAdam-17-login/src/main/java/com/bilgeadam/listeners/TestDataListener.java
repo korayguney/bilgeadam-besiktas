@@ -1,6 +1,8 @@
 package com.bilgeadam.listeners;
 
 import com.bilgeadam.utils.DBUtils;
+import com.bilgeadam.utils.HashAlgorithm;
+import com.bilgeadam.utils.SecurityUtils;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -23,11 +25,12 @@ public class TestDataListener implements ServletContextListener {
             int result = rs.getInt("usercount");
 
             if(result == 0){
-                stmt.execute("insert into users(username,password) values ('Koray','1234')");
-                stmt.execute("insert into users(username,password) values ('Furkan','1234')");
-                stmt.execute("insert into users(username,password) values ('Sefa','1234')");
-                stmt.execute("insert into users(username,password) values ('Kaan','1234')");
-                stmt.execute("insert into users(username,password) values ('Oguzhan','1234')");
+                stmt.execute("insert into users(username,password) values ('Koray','" + SecurityUtils.hassPassword("1234", HashAlgorithm.SHA1)+"')");
+                stmt.execute("insert into users(username,password) values ('Furkan','" + SecurityUtils.hassPassword("12345", HashAlgorithm.SHA1)+"')");
+                stmt.execute("insert into users(username,password) values ('Oguzhan','" + SecurityUtils.hassPassword("12341", HashAlgorithm.SHA1)+"')");
+                stmt.execute("insert into users(username,password) values ('Sefa','" + SecurityUtils.hassPassword("12340", HashAlgorithm.SHA1)+"')");
+                stmt.execute("insert into users(username,password) values ('Kaan','" + SecurityUtils.hassPassword("1234", HashAlgorithm.SHA1)+"')");
+
             }
 
 

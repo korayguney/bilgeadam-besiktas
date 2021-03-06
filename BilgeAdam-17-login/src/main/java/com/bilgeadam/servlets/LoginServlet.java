@@ -1,5 +1,8 @@
 package com.bilgeadam.servlets;
 
+import com.bilgeadam.dao.UserDAO;
+import com.bilgeadam.model.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,13 +14,18 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       String username =  req.getParameter("username");
-       String password =  req.getParameter("pass");
+        String username = req.getParameter("username");
+        String password = req.getParameter("pass");
 
-        System.out.println("Username : " + username);
-        System.out.println("Password : " + password);
+        User user  = new User(username, password);
 
+        boolean result = new UserDAO().isUserOnDB(user);
 
+        if(result){
+            resp.getWriter().append("Welcome " + username);
+        } else {
+            resp.sendRedirect("index.html");
+        }
 
     }
 
