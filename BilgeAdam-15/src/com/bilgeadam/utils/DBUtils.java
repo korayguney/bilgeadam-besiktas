@@ -29,7 +29,7 @@ public class DBUtils {
         Properties prop = new Properties();
 
         try {
-            prop.load(new FileInputStream("BilgeAdam-17-login/src/main/resources/db.properties"));
+            prop.load(new FileInputStream("D:\\BilgeAdam\\BEŞİKTAŞ-GRUP\\db.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }
