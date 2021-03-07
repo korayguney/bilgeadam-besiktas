@@ -4,6 +4,7 @@
     <title>Captcha Example for Java</title>
 </head>
 <body>
+    <jsp:include page="header.jsp"/>
     <div align="center">
         <hr/>
         <h3>Login Page with Captcha</h3>
@@ -28,6 +29,7 @@
 
 
     </div>
+    <jsp:include page="footer.jsp"/>
 
 
 

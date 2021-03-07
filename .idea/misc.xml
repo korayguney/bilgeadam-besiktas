@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/BilgeAdam-16-calculator" />
+    <file type="web" url="file://$PROJECT_DIR$/BilgeAdam-16-ee" />
+    <file type="web" url="file://$PROJECT_DIR$/BilgeAdam-17-captcha1" />
+    <file type="web" url="file://$PROJECT_DIR$/BilgeAdam-17-captcha2" />
+    <file type="web" url="file://$PROJECT_DIR$/BilgeAdam-17-linkproject" />
+    <file type="web" url="file://$PROJECT_DIR$/BilgeAdam-17-login" />
+    <file type="web" url="file://$PROJECT_DIR$/captcha" />
+    <file type="web" url="file://$PROJECT_DIR$/captcha2" />
+    <file type="web" url="file://$PROJECT_DIR$/demo" />
+    <file type="web" url="file://$PROJECT_DIR$/login" />
+    <file type="web" url="file://$PROJECT_DIR$/testlogin" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/BilgeAdam-16-ee/pom.xml" />
+        <option value="$PROJECT_DIR$/BilgeAdam-16-calculator/pom.xml" />
+        <option value="$PROJECT_DIR$/BilgeAdam-17-captcha1/pom.xml" />
+        <option value="$PROJECT_DIR$/BilgeAdam-17-captcha2/pom.xml" />
+        <option value="$PROJECT_DIR$/BilgeAdam-17-login/pom.xml" />
+        <option value="$PROJECT_DIR$/BilgeAdam-17-linkproject/pom.xml" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="BilgeAdam-16-calculator" />
+        <module name="BilgeAdam-17-linkproject" />
+        <module name="BilgeAdam-16-ee" />
+        <module name="BilgeAdam-17-captcha1" />
+        <module name="BilgeAdam-17-captcha2" />
+        <module name="BilgeAdam-17-login" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="BilgeAdam-16-calculator" target="1.8" />
+      <module name="BilgeAdam-16-ee" target="1.8" />
+      <module name="BilgeAdam-16-javaee" target="1.8" />
+      <module name="BilgeAdam-17-captcha1" target="1.8" />
+      <module name="BilgeAdam-17-captcha2" target="1.8" />
+      <module name="BilgeAdam-17-linkproject" target="1.8" />
+      <module name="BilgeAdam-17-login" target="1.8" />
+      <module name="captcha" target="1.8" />
+      <module name="captcha2" target="1.8" />
+      <module name="demo" target="1.8" />
+      <module name="demo111" target="1.8" />
+      <module name="login" target="1.8" />
+      <module name="testlogin" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
