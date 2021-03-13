@@ -168,4 +168,40 @@ public class LinkDAO {
             }
         }
     }
+
+    public List<UserLink> getSelectedUserLinks(String username) {
+
+        List<UserLink> arr = new ArrayList<>();
+
+        Connection conn = DBUtils.getConnection();
+        PreparedStatement psmt = null;
+        try {
+            psmt = conn.prepareStatement("SELECT * FROM user_links WHERE username=? ORDER BY viewcount DESC");
+            psmt.setString(1, username);
+
+            ResultSet rs = psmt.executeQuery();
+
+            while (rs.next()) {
+                arr.add(new UserLink(
+                        rs.getString("username"),
+                        rs.getString("postedlink"),
+                        rs.getString("title"),
+                        rs.getDate("postdate"),
+                        rs.getInt("viewcount")
+                ));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            try {
+                if (!conn.isClosed()) {
+                    conn.close();
+                }
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+
+        return arr;
+    }
 }

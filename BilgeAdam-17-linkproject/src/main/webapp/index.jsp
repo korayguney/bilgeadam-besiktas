@@ -32,7 +32,7 @@
                         <td><a href="${pageContext.request.contextPath}/viewcount?link=${link.postedlink}">${link.postedlink}</a></td>
                         <td>${link.postdate}</td>
                         <td align="center">${link.viewcount}</td>
-                        <td>${link.username}</td>
+                        <td><a href="${pageContext.request.contextPath}/userlinks?username=${link.username}">${link.username}</a></td>
                     </tr>
                 </c:forEach>
             </table>
