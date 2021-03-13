@@ -10,9 +10,30 @@
         <h3>My Links</h3>
         <c:if test="${empty username}">
             <form action="${pageContext.request.contextPath}/login" method="post">
-                Username : <input type="text" name="username">
-                Password : <input type="password" name="password">
-                <input type="submit" value="Login">
+                <table>
+                    <tr>
+                        <td>Username :</td>
+                        <td><input type="text" name="username"></td>
+                    </tr>
+                    <tr>
+                        <td>Password :</td>
+                        <td><input type="password" name="password"></td>
+                    </tr>
+                    <c:if test="${not empty wronglogin}">
+                        <tr>
+                            <td></td>
+                            <td><img alt="captcha img" src="gencapt"></td>
+                        </tr>
+                        <tr>
+                            <td>Captcha :</td>
+                            <td><input type="text" name="captcha"></td>
+                        </tr>
+                    </c:if>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Login"></td>
+                    </tr>
+                </table>
             </form>
             <a href="${pageContext.request.contextPath}/index">Home</a>
             <a href="register.jsp">Register</a>

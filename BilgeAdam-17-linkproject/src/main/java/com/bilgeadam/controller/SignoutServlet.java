@@ -12,6 +12,7 @@ public class SignoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getSession().invalidate();
+        req.setAttribute("wrongloginattemptzero",0);
         req.getRequestDispatcher("/index").forward(req,resp);
     }
 
