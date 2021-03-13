@@ -20,7 +20,8 @@ public class RegisterServlet extends HttpServlet {
 
         try{
             if (username.isEmpty() || password1.isEmpty() || password2.isEmpty()) {
-
+                req.setAttribute("error1", "All fields must be filled");
+                req.getRequestDispatcher("register.jsp").forward(req, resp);
             } else if (!password1.equals(password2)) {
                 req.setAttribute("error1", "Your passwords are not match");
                 req.getRequestDispatcher("register.jsp").forward(req, resp);

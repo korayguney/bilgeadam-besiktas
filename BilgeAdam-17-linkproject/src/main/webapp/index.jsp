@@ -29,7 +29,7 @@
                 <c:forEach items="${links}" var="link">
                     <tr>
                         <td>${link.title}</td>
-                        <td><a href="${link.postedlink}">${link.postedlink}</a></td>
+                        <td><a href="${pageContext.request.contextPath}/viewcount?link=${link.postedlink}">${link.postedlink}</a></td>
                         <td>${link.postdate}</td>
                         <td align="center">${link.viewcount}</td>
                         <td>${link.username}</td>
@@ -38,10 +38,6 @@
             </table>
 
         </div>
-
-
-
-
     </div>
     <br>
     <jsp:include page="footer.jsp"/>

@@ -24,7 +24,7 @@
             <p>Welcome ${username}</p>
             <a href="${pageContext.request.contextPath}/index">Home</a>
             <a href="${pageContext.request.contextPath}/mylinks">My Links</a>
-            <a href="${pageContext.request.contextPath}/postlink.jsp">Post Link</a>
+            <a href="${pageContext.request.contextPath}/secure/postlink.jsp">Post Link</a>
             <a href="${pageContext.request.contextPath}/signout">Sign out</a>
         </c:if>
 
