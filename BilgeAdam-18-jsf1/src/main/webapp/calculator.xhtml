@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+>
+<h:head>
+    <title>Title</title>
+</h:head>
+<body>
+<h2>JSF Calculator</h2>
+<br/>
+<hr/>
+<h:form>
+    <table>
+        <tr>
+            <td>First Digit :</td>
+            <td><h:inputText value="#{calculator.firstDigit}" required="true" requiredMessage="You have to fill this section" id="first"/></td>
+        </tr>
+        <tr>
+            <td>Second Digit :</td>
+            <td><h:inputText value="#{calculator.secondDigit}" required="true" requiredMessage="You have to fill this section" id="second"/></td>
+        </tr>
+        <h:panelGrid columns="4">
+            <h:commandButton action="#{calculator.sum}" value="Sum"/>
+            <h:commandButton action="#{calculator.subtract}" value="Subtract"/>
+            <h:commandButton action="#{calculator.multiply}" value="Multiply"/>
+            <h:commandButton action="#{calculator.devide}" value="Devide"/>
+        </h:panelGrid>
+    </table>
+    <h:message for="first"/>
+    <h:message for="second"/>
+</h:form>
+
+<br/>
+<hr/>
+<h:outputText value="Result : #{calculator.result}"/>
+<br/>
+</body>
+</html>
