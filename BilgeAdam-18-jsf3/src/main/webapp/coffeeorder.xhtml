@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+>
+<h:head>
+    <title>Coffee Order Page</title>
+</h:head>
+<body>
+<hr></hr>
+<h2>Coffee Order Page</h2>
+<h:form>
+    <table>
+        <tr>
+            <td>Customer Name :</td>
+            <td><h:inputText value="#{coffeeBean.coffee.customerName}" required="true" requiredMessage="Customer name must be filled" id="fname"/></td>
+            <td><h:message for="fname"></h:message></td>
+        </tr>
+        <tr>
+            <td>Coffee :</td>
+            <td>
+                <h:selectOneMenu value="#{coffeeBean.coffee.coffeeType}">
+                    <f:selectItem itemValue="Americano" itemLabel="Americano"></f:selectItem>
+                    <f:selectItem itemValue="Mocha" itemLabel="Mocha"></f:selectItem>
+                    <f:selectItem itemValue="Frappachino" itemLabel="Frappachino"></f:selectItem>
+                    <f:selectItem itemValue="Machiato" itemLabel="Machiato"></f:selectItem>
+                    <f:selectItem itemValue="Mırra" itemLabel="Mırra"></f:selectItem>
+                </h:selectOneMenu>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><h:commandButton action="#{coffeeBean.saveCustomerOrder}" value="Save Order"/></td>
+            <td></td>
+        </tr>
+
+    </table>
+</h:form>
+<br/>
+<hr/>
+<h:outputText value="Order is saved for : #{coffeeBean.coffee.customerName}" />
+<br/>
+<hr/>
+
+</body>
+</html>

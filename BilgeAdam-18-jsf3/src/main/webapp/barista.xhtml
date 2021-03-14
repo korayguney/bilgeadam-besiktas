@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+>
+<h:head>
+    <title>Coffee Order Page</title>
+</h:head>
+<body>
+<hr></hr>
+<h2>Barista Page</h2>
+<h:form>
+    <h:dataTable value="#{coffeeBean.coffeeList}" var="coffee" border="1">
+        <h:column>#{coffee.id}</h:column>
+        <h:column>#{coffee.customerName}</h:column>
+        <h:column>#{coffee.coffeeType}</h:column>
+        <h:column><h:commandButton action="#{coffeeBean.deleteOrder(coffee)}" value="Delete order"/></h:column>
+    </h:dataTable>
+</h:form>
+<br/>
+<hr/>
+<br/>
+<hr/>
+
+
+
+</body>
+</html>

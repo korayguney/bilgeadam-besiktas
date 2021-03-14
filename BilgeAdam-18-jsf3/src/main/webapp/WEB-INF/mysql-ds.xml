@@ -1,0 +1,17 @@
+<datasources>
+    <datasource jndi-name="java:jboss/datasources/jsfDS"
+                pool-name="jsfPool">
+        <connection-url>jdbc:mysql://localhost/jsfdb?characterEncoding=UTF8
+        </connection-url>
+        <driver>mysql</driver>
+        <pool>
+            <min-pool-size>1</min-pool-size>
+            <max-pool-size>5</max-pool-size>
+            <prefill>true</prefill>
+        </pool>
+        <security>
+            <user-name>root</user-name>
+            <password>1234</password>
+        </security>
+    </datasource>
+</datasources>
