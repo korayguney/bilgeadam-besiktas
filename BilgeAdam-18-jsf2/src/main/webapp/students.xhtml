@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+>
+<h:head>
+    <title>Title</title>
+</h:head>
+<body>
+<h:form>
+    <table>
+        <tr>
+            <td>First Name :</td>
+            <td><h:inputText value="#{studentBean.student.firstname}" required="true" requiredMessage="Firstname must be filled" id="fname"/></td>
+            <td><h:message for="fname"></h:message></td>
+        </tr>
+        <tr>
+            <td>Last Name :</td>
+            <td><h:inputText value="#{studentBean.student.secondname}" required="true" requiredMessage="Lastname must be filled" id="lname"/></td>
+            <td><h:message for="lname"></h:message></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><h:commandButton action="#{studentBean.saveStudent}" value="Save"/></td>
+            <td></td>
+        </tr>
+
+    </table>
+</h:form>
+<br/>
+<hr/>
+<h:outputText value="Student saved : #{studentBean.student.firstname}  #{studentBean.student.secondname}"/>
+<br/>
+<hr/>
+
+<h:dataTable value="#{studentBean.students}" var="stu" border="1">
+    <h:column>#{stu.id}</h:column>
+    <h:column>#{stu.firstname}</h:column>
+    <h:column>#{stu.secondname}</h:column>
+</h:dataTable>
+
+</body>
+</html>
