@@ -14,6 +14,7 @@ public class Student {
     private int id;
     private String firstname;
     private String secondname;
+    private String gender;
 
     public Student(String firstname, String secondname) {
         this.firstname = firstname;
@@ -45,6 +46,14 @@ public class Student {
 
     public void setSecondname(String secondname) {
         this.secondname = secondname;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     @Override

@@ -4,6 +4,7 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
 >
 <h:head>
     <title>Title</title>
@@ -22,6 +23,16 @@
             <td><h:message for="lname"></h:message></td>
         </tr>
         <tr>
+            <td>Gender :</td>
+            <td>
+                <h:selectOneMenu value="#{studentBean.student.gender}">
+                    <f:selectItem itemValue="Male" itemLabel="Male"></f:selectItem>
+                    <f:selectItem itemValue="Female" itemLabel="Female"></f:selectItem>
+                </h:selectOneMenu>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
             <td></td>
             <td><h:commandButton action="#{studentBean.saveStudent}" value="Save"/></td>
             <td></td>
@@ -31,7 +42,7 @@
 </h:form>
 <br/>
 <hr/>
-<h:outputText value="Student saved : #{studentBean.student.firstname}  #{studentBean.student.secondname}"/>
+<h:outputText value="Student saved : #{studentBean.student.firstname}  #{studentBean.student.secondname} #{studentBean.student.gender}" />
 <br/>
 <hr/>
 
@@ -39,6 +50,7 @@
     <h:column>#{stu.id}</h:column>
     <h:column>#{stu.firstname}</h:column>
     <h:column>#{stu.secondname}</h:column>
+    <h:column>#{stu.gender}</h:column>
 </h:dataTable>
 
 </body>
