@@ -8,6 +8,9 @@
     <file type="web" url="file://$PROJECT_DIR$/BilgeAdam-17-linkproject" />
     <file type="web" url="file://$PROJECT_DIR$/BilgeAdam-17-login" />
     <file type="web" url="file://$PROJECT_DIR$/BilgeAdam-18-jsf1" />
+    <file type="web" url="file://$PROJECT_DIR$/BilgeAdam-18-jsf2" />
+    <file type="web" url="file://$PROJECT_DIR$/BilgeAdam-18-jsf3" />
+    <file type="web" url="file://$PROJECT_DIR$/BilgeAdam-19-SIS" />
     <file type="web" url="file://$PROJECT_DIR$/captcha" />
     <file type="web" url="file://$PROJECT_DIR$/captcha2" />
     <file type="web" url="file://$PROJECT_DIR$/demo" />
@@ -25,6 +28,9 @@
         <option value="$PROJECT_DIR$/BilgeAdam-17-login/pom.xml" />
         <option value="$PROJECT_DIR$/BilgeAdam-17-linkproject/pom.xml" />
         <option value="$PROJECT_DIR$/BilgeAdam-18-jsf1/pom.xml" />
+        <option value="$PROJECT_DIR$/BilgeAdam-18-jsf2/pom.xml" />
+        <option value="$PROJECT_DIR$/BilgeAdam-18-jsf3/pom.xml" />
+        <option value="$PROJECT_DIR$/BilgeAdam-19-SIS/pom.xml" />
       </list>
     </option>
   </component>
