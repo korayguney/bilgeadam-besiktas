@@ -33,7 +33,6 @@ public class LoginBean {
                     "Email or Password is wrong!"));
             return "login";
         }
-
     }
 
     public String getEmail() {
