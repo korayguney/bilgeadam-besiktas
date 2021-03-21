@@ -30,17 +30,17 @@
             <p:column headerText="ID" style="width: 50px">
                 <h:outputText value="#{user.id}"/>
             </p:column>
-            <p:column headerText="FIRST NAME">
+            <p:column headerText="FIRST NAME" sortBy="#{user.firstname}" filterBy="#{user.firstname}">
                 <h:outputText value="#{user.firstname}"/>
             </p:column>
-            <p:column headerText="LAST NAME">
-                <h:outputText value="#{user.lastname}"/>
+            <p:column headerText="LAST NAME" sortBy="#{user.lastname}" filterBy="#{user.lastname}">
+                <h:outputText value="#{user.lastname}"  />
             </p:column>
-            <p:column headerText="EMAIL">
-                <h:outputText value="#{user.email}"/>
+            <p:column headerText="EMAIL" sortBy="#{user.email}">
+                <h:outputText value="#{user.email}" />
             </p:column>
-            <p:column headerText="ROLE">
-                <h:outputText value="#{user.role}"/>
+            <p:column headerText="ROLE" sortBy="#{user.role}">
+                <h:outputText value="#{user.role}" />
             </p:column>
             <p:column headerText="MANAGE USER" style="width: 300px; align-content: center">
                 <p:button href="updateuser.xhtml?userId=#{user.id}" value="Update" class="btn btn-light" />

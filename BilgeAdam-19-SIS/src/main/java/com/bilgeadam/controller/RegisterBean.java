@@ -1,5 +1,6 @@
 package com.bilgeadam.controller;
 
+import com.bilgeadam.exception.EmailAlreadyExistsException;
 import com.bilgeadam.model.User;
 import com.bilgeadam.service.UserService;
 
@@ -44,9 +45,15 @@ public class RegisterBean {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Register error",
                     "  Passwords are not match!"));
         } else {
-            userService.registerUserToDatabase(user);
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Register success",
-                    "  User saved to database!"));
+
+            try {
+                userService.registerUserToDatabase(user);
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Register success",
+                        "  User saved to database!"));
+            } catch (EmailAlreadyExistsException e) {
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN,"Register not executed",
+                        e.getMessage()));
+            }
         }
 
         return "register";
