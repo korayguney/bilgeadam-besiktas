@@ -105,4 +105,17 @@ public class User {
     public void setCourses(List<Course> courses) {
         this.courses = courses;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", role=" + role +
+                ", courses=" + courses +
+                '}';
+    }
 }

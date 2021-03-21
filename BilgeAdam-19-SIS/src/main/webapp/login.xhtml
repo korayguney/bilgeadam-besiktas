@@ -9,40 +9,37 @@
       xmlns:p="http://primefaces.org/ui">
 <h:head>
     <title>Login Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 </h:head>
 <body>
 <div align="center">
-    <h1>Student Information System <br/> Login Page </h1>
-    <br></br>
+    <div class="alert alert-primary" style="margin: 30px 30px 30px 30px; background-color:beige;">
+        <h1>Student Information System <br/> Login Page </h1>
+    </div>
 
-    <hr/>
-    <br></br>
-
+    <div class="alert alert-primary" style="margin: 30px 30px 30px 30px; padding: 30px 30px 30px 30px; background-color:#f8d7da; ">
     <h:form>
         <table>
             <tr>
-                <td>Email : </td>
+                <td style="font-size: large">Email : </td>
                 <td><p:inputText value="#{login.email}" required="true" requiredMessage="You have to fill this section" id="email"/></td>
                 <td><p:message for="email"/></td>
             </tr>
             <tr>
-                <td>Password : </td>
+                <td  style="font-size: large">Password : </td>
                 <td><p:password value="#{login.password}" required="true" requiredMessage="You have to fill this section" id="passw"/></td>
                 <td><p:message for="passw"/></td>
             </tr>
             <tr>
                 <td></td>
-                <td><p:commandButton action="#{login.checkUser}" value="Login" ajax="false" />
-                    <p:button value="Cancel" href="index.xhtml" /> </td>
+                <td><p:commandButton action="#{login.checkUser}" value="Login" ajax="false" class="btn btn-light" />
+                    <p:button value="Cancel" href="index.xhtml" class="btn btn-light" /> </td>
             </tr>
         </table>
         <p:messages showDetail="true" autoUpdate="true" />
     </h:form>
+    </div>
 
-
-    <br></br>
-
-    <hr/>
 </div>
 </body>
 </html>
