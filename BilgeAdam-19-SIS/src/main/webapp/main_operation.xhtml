@@ -9,35 +9,39 @@
       xmlns:p="http://primefaces.org/ui">
 <h:head>
     <title>BilgeAdam Main Operation Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 </h:head>
 <body>
 <div align="center">
-    <h1>
-        <p:outputLabel value="Welcome : #{sessionScopeBean.user.firstname} #{sessionScopeBean.user.lastname}"></p:outputLabel>
-    </h1>
-    <h2>
-        <p:outputLabel value="Role : #{sessionScopeBean.user.role}"></p:outputLabel>
-    </h2>
-    <br></br>
-    <hr></hr>
-    <br></br>
+    <div class="alert alert-primary" style="margin: 30px 30px 30px 30px; background-color:beige;">
+        <h1>
+            <p:outputLabel value="Welcome : #{sessionScopeBean.user.firstname} #{sessionScopeBean.user.lastname}"></p:outputLabel>
+        </h1>
+    </div>
 
-    <h:form rendered="#{sessionScopeBean.user.role == 'ADMIN'}">
-        <p:button href="userlist.xhtml" value="Manage Users"/>
-        <p:button href="courselist.xhtml" value="Manage Courses"/>
-    </h:form>
+    <div class="alert alert-primary" style="margin: 20px 20px 20px 20px; background-color:#c3e6cb;">
+        <h2>
+            <p:outputLabel value="Role : #{sessionScopeBean.user.role}"></p:outputLabel>
+        </h2>
+    </div>
 
-    <h:form rendered="#{sessionScopeBean.user.role == 'STUDENT'}">
-        <h3>Inside student page</h3>
-    </h:form>
+    <div class="alert alert-primary" style="margin: 30px 30px 30px 30px; padding: 30px 30px 30px 30px; background-color:#f8d7da; ">
+        <h:form rendered="#{sessionScopeBean.user.role == 'ADMIN'}">
+            <p:button href="userlist.xhtml" value="Manage Users"/>
+            <p:button href="courselist.xhtml" value="Manage Courses"/>
+            <p:commandButton value="Logout" action="#{login.logout}" />
+        </h:form>
 
-    <h:form rendered="#{sessionScopeBean.user.role == 'INSTRUCTOR'}">
-        <h3>Inside instructor page</h3>
-    </h:form>
+        <h:form rendered="#{sessionScopeBean.user.role == 'STUDENT'}">
+            <p:button href="mycourse.xhtml" value="Display My Courses"/>
+            <p:commandButton value="Logout" action="#{login.logout}" />
+        </h:form>
 
-    <br></br>
-    <hr></hr>
-    <br></br>
+        <h:form rendered="#{sessionScopeBean.user.role == 'INSTRUCTOR'}">
+            <h3>Inside instructor page</h3>
+        </h:form>
+    </div>
+
 </div>
 
 </body>

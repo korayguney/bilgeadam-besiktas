@@ -20,7 +20,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    @ManyToMany(mappedBy = "userList")
+    @ManyToMany(mappedBy = "userList", fetch = FetchType.EAGER)
     private List<Course> courses = new ArrayList<>();
 
     public enum Role {

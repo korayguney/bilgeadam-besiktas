@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+</h:head>
+<body>
+<div align="center">
+    <div class="alert alert-primary" style="margin: 30px 30px 30px 30px; background-color:beige;">
+        <h1>Student Information System <br/> Course Adding Page </h1>
+    </div>
+
+    <div class="alert alert-primary" style="margin: 30px 30px 30px 30px; padding: 30px 30px 30px 30px; background-color:#f8d7da; ">
+    <h:form>
+        <table>
+            <tr>
+                <td style="font-size: large">Course Code : </td>
+                <td><p:inputText value="#{newCourseBean.course.courseCode}" required="true" requiredMessage="You have to fill this section" id="code"/></td>
+                <td><p:message for="code"/></td>
+            </tr>
+            <tr>
+                <td style="font-size: large">Course Name : </td>
+                <td><p:inputText value="#{newCourseBean.course.courseName}" required="true" requiredMessage="You have to fill this section" id="cname"/></td>
+                <td><p:message for="cname"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><p:commandButton action="#{newCourseBean.saveCourse()}" value="Save" ajax="false" class="btn btn-light" />
+                    <p:button value="Cancel" href="courselist.xhtml" class="btn btn-light" /> </td>
+            </tr>
+        </table>
+        <p:messages showDetail="true" autoUpdate="true" />
+    </h:form>
+    </div>
+
+</div>
+</body>
+</html>
