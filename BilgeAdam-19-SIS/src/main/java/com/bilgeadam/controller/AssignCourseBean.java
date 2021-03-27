@@ -47,6 +47,10 @@ public class AssignCourseBean {
         return "assigncourse";
     }
 
+    public List<User> getAllInstructors(){
+        return userService.getAllInstructors();
+    }
+
     public List<User> getAllStudents(){
         return userService.getAllStudents();
     }

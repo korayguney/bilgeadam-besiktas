@@ -71,4 +71,8 @@ public class UserService {
         assignMap.put(foundUser, foundCourse);
         return assignMap;
     }
+
+    public List<User> getAllInstructors() {
+        return entityManager.createQuery("from User u WHERE u.role=:userrole", User.class).setParameter("userrole",User.Role.INSTRUCTOR).getResultList();
+    }
 }

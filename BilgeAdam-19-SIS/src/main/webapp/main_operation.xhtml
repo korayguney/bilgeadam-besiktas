@@ -38,7 +38,8 @@
         </h:form>
 
         <h:form rendered="#{sessionScopeBean.user.role == 'INSTRUCTOR'}">
-            <h3>Inside instructor page</h3>
+            <p:button href="mycourse.xhtml" value="Display My Courses"/>
+            <p:commandButton value="Logout" action="#{login.logout}" />
         </h:form>
     </div>
 

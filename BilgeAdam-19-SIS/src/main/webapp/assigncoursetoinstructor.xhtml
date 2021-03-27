@@ -8,24 +8,24 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui">
 <h:head>
-    <title>Login Page</title>
+    <title>Course Assign Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 </h:head>
 <body>
 <div align="center">
     <div class="alert alert-primary" style="margin: 30px 30px 30px 30px; background-color:beige;">
-        <h1>Student Information System <br/> Assign Course Page </h1>
+        <h1>Student Information System <br/> Assign Course to Instructor Page </h1>
     </div>
 
     <div class="alert alert-primary" style="margin: 30px 30px 30px 30px; padding: 30px 30px 30px 30px; background-color:#f8d7da; ">
     <h:form>
         <table>
             <tr>
-                <td  style="font-size: large">Student : </td>
+                <td  style="font-size: large">Instructor : </td>
                 <td>
                     <p:selectOneMenu value="#{assignCourseBean.selectedUserId}" style="width: 225px">
-                        <f:selectItem itemLabel="Select Student" itemValue=""/>
-                        <f:selectItems value="#{assignCourseBean.allStudents}" var="inst" itemValue="#{inst.id}" itemLabel="#{inst.firstname} #{inst.lastname}"/>
+                        <f:selectItem itemLabel="Select Instructor" itemValue=""/>
+                        <f:selectItems value="#{assignCourseBean.allInstructors}" var="inst" itemValue="#{inst.id}" itemLabel="#{inst.firstname} #{inst.lastname}"/>
                     </p:selectOneMenu>
                 </td>
             </tr>
