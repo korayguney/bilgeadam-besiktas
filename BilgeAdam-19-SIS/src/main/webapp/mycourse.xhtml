@@ -21,7 +21,7 @@
     </div>
     <div class="alert alert-primary" style="margin: 30px 30px 30px 30px; padding: 30px 30px 30px 30px; background-color:#f8d7da; ">
         <h:form>
-        <p:dataTable value="#{sessionScopeBean.user.courses}" var="course" rowIndexVar="rowIndex">
+        <p:dataTable value="#{sessionScopeBean.user.courses}" var="usercourse" rowIndexVar="rowIndex">
             <f:facet name="header">
                 COURSE LIST
             </f:facet>
@@ -29,11 +29,18 @@
             <p:column headerText="ID" style="width: 50px">
                 <h:outputText value="#{rowIndex + 1}"/>
             </p:column>
-            <p:column headerText="COURSE CODE" sortBy="#{course.courseCode}" filterBy="#{course.courseCode}">
-                <h:outputText value="#{course.courseCode}"/>
+            <p:column headerText="COURSE CODE" sortBy="#{usercourse.course.courseCode}" filterBy="#{usercourse.course.courseCode}">
+                <h:outputText value="#{usercourse.course.courseCode}"/>
             </p:column>
-            <p:column headerText="COURSE NAME" sortBy="#{course.courseName}" filterBy="#{course.courseName}">
-                <h:outputText value="#{course.courseName}"  />
+            <p:column headerText="COURSE NAME" sortBy="#{usercourse.course.courseName}" filterBy="#{usercourse.course.courseName}">
+                <h:outputText value="#{usercourse.course.courseName}"  />
+            </p:column>
+            <p:column headerText="COURSE SCORE" rendered="#{usercourse.user.role eq 'STUDENT'}"  >
+                <h:outputText value="Not scored yet" rendered="#{usercourse.user.role eq 'STUDENT' and usercourse.courseScore eq 0.0}" />
+                <h:outputText value="#{usercourse.courseScore}" rendered="#{usercourse.user.role eq 'STUDENT' and usercourse.courseScore ne 0.0}" />
+            </p:column>
+            <p:column headerText="SCORE COURSE" rendered="#{sessionScopeBean.user.role eq 'INSTRUCTOR'}">
+                <p:button value="SCORE COURSE" href="scorecourse.xhtml" />
             </p:column>
             <f:facet name="footer">
                 There are #{sessionScopeBean.user.courses.size()} assigned courses on the table.

@@ -3,6 +3,7 @@ package com.bilgeadam.service;
 import com.bilgeadam.exception.EmailAlreadyExistsException;
 import com.bilgeadam.model.Course;
 import com.bilgeadam.model.User;
+import com.bilgeadam.model.UserCourse;
 import com.bilgeadam.util.HashAlgorithm;
 import com.bilgeadam.util.SecurityUtils;
 
@@ -64,9 +65,14 @@ public class UserService {
         User foundUser = entityManager.find(User.class, userId);
         Course foundCourse = entityManager.find(Course.class, courseId);
 
-        foundCourse.getUserList().add(foundUser);
+        UserCourse userCourse = new UserCourse();
+        userCourse.setUser(foundUser);
+        userCourse.setCourse(foundCourse);
+        entityManager.merge(userCourse);
+
+        /*foundCourse.getUserList().add(foundUser);
         entityManager.merge(foundCourse);
-        entityManager.merge(foundUser);
+        entityManager.merge(foundUser);*/
 
         assignMap.put(foundUser, foundCourse);
         return assignMap;

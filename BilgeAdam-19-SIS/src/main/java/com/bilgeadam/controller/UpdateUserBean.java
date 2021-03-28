@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class UpdateUserBean {
     private User user;
     private List<SelectItem> roleList;
@@ -26,16 +26,22 @@ public class UpdateUserBean {
 
     @PostConstruct
     public void init(){
-        roleList = new ArrayList<>();
-        User.Role[] roleArr = User.Role.values();
+        try {
+            roleList = new ArrayList<>();
+            User.Role[] roleArr = User.Role.values();
 
-        for (User.Role role : roleArr) {
-            roleList.add(new SelectItem(role));
+            for (User.Role role : roleArr) {
+                roleList.add(new SelectItem(role));
+            }
+
+            user = new User();
+
+            HttpServletRequest req = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
+            int userId = Integer.valueOf(req.getParameter("userId"));
+            user = userService.findUser(userId);
+        } catch (Exception e) {
+            System.out.println("userID is null...");
         }
-
-        HttpServletRequest req = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
-        int userId = Integer.valueOf(req.getParameter("userId"));
-        user = userService.findUser(userId);
     }
 
     public String updateUser(){

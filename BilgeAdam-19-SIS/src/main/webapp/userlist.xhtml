@@ -24,29 +24,29 @@
     </div>
     <div class="alert alert-primary" style="margin: 30px 30px 30px 30px; padding: 30px 30px 30px 30px; background-color:#f8d7da; ">
         <h:form>
-        <p:dataTable value="#{userListBean.userList}" var="course">
+        <p:dataTable value="#{userListBean.userList}" var="usercourse">
             <f:facet name="header">
                 USER LIST
             </f:facet>
 
             <p:column headerText="ID" style="width: 50px">
-                <h:outputText value="#{course.id}"/>
+                <h:outputText value="#{usercourse.id}"/>
             </p:column>
-            <p:column headerText="FIRST NAME" sortBy="#{course.firstname}" filterBy="#{course.firstname}">
-                <h:outputText value="#{course.firstname}"/>
+            <p:column headerText="FIRST NAME" sortBy="#{usercourse.firstname}" filterBy="#{usercourse.firstname}">
+                <h:outputText value="#{usercourse.firstname}"/>
             </p:column>
-            <p:column headerText="LAST NAME" sortBy="#{course.lastname}" filterBy="#{course.lastname}">
-                <h:outputText value="#{course.lastname}"  />
+            <p:column headerText="LAST NAME" sortBy="#{usercourse.lastname}" filterBy="#{usercourse.lastname}">
+                <h:outputText value="#{usercourse.lastname}"  />
             </p:column>
-            <p:column headerText="EMAIL" sortBy="#{course.email}">
-                <h:outputText value="#{course.email}" />
+            <p:column headerText="EMAIL" sortBy="#{usercourse.email}">
+                <h:outputText value="#{usercourse.email}" />
             </p:column>
-            <p:column headerText="ROLE" sortBy="#{course.role}">
-                <h:outputText value="#{course.role}" />
+            <p:column headerText="ROLE" sortBy="#{usercourse.role}">
+                <h:outputText value="#{usercourse.role}" />
             </p:column>
             <p:column headerText="MANAGE USER" style="width: 300px; align-content: center">
-                <p:button href="updateuser.xhtml?userId=#{course.id}" value="Update" class="btn btn-light" />
-                <p:commandButton value="Delete" action="#{userListBean.deleteUser(course)}" ajax="false" class="btn btn-danger" />
+                <p:button href="updateuser.xhtml?userId=#{usercourse.id}" value="Update" class="btn btn-light" />
+                <p:commandButton value="Delete" action="#{userListBean.deleteUser(usercourse)}" ajax="false" class="btn btn-danger" />
             </p:column>
 
             <f:facet name="footer">

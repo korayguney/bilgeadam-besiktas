@@ -13,8 +13,8 @@ public class Course {
     private String courseCode;
     private String courseName;
 
-    @ManyToMany
-    private List<User> userList = new ArrayList<>();
+    @OneToMany(mappedBy = "user")
+    private List<UserCourse> userList = new ArrayList<>();
 
     public Course() {
     }
@@ -48,11 +48,11 @@ public class Course {
         this.courseName = courseName;
     }
 
-    public List<User> getUserList() {
+    public List<UserCourse> getUserList() {
         return userList;
     }
 
-    public void setUserList(List<User> userList) {
+    public void setUserList(List<UserCourse> userList) {
         this.userList = userList;
     }
 }

@@ -8,11 +8,12 @@ import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class UpdateCourseBean {
     private Course course;
 
@@ -22,9 +23,13 @@ public class UpdateCourseBean {
     @PostConstruct
     public void init() {
 
-        HttpServletRequest req = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
-        int courseId = Integer.valueOf(req.getParameter("courseId"));
-        course = courseService.findCourse(courseId);
+        try {
+            HttpServletRequest req = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+            int courseId = Integer.valueOf(req.getParameter("courseId"));
+            course = courseService.findCourse(courseId);
+        } catch (NumberFormatException e) {
+            System.out.println("courseId is null...");
+        }
     }
 
     public String updateCourse() {

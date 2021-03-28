@@ -34,7 +34,7 @@
                 <td>
                     <p:selectOneMenu value="#{assignCourseBean.selectedCourseId}" style="width: 225px">
                         <f:selectItem itemLabel="Select Course" itemValue=""/>
-                        <f:selectItems value="#{assignCourseBean.allCourses}" var="course" itemValue="#{course.id}" itemLabel="#{course.courseCode}-#{course.courseName}"/>
+                        <f:selectItems value="#{assignCourseBean.allCourses}" var="usercourse" itemValue="#{usercourse.id}" itemLabel="#{usercourse.courseCode}-#{usercourse.courseName}"/>
                     </p:selectOneMenu>
                 </td>
             </tr>

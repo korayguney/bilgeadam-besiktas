@@ -24,8 +24,8 @@
                 <td  style="font-size: large">Student : </td>
                 <td>
                     <p:selectOneMenu value="#{assignCourseBean.selectedUserId}" style="width: 225px">
-                        <f:selectItem itemLabel="Select Student" itemValue=""/>
-                        <f:selectItems value="#{assignCourseBean.allStudents}" var="inst" itemValue="#{inst.id}" itemLabel="#{inst.firstname} #{inst.lastname}"/>
+                        <f:selectItem itemLabel="Select Instructor" itemValue=""/>
+                        <f:selectItems value="#{assignCourseBean.allInstructors}" var="inst" itemValue="#{inst.id}" itemLabel="#{inst.firstname} #{inst.lastname}"/>
                     </p:selectOneMenu>
                 </td>
             </tr>
@@ -34,7 +34,7 @@
                 <td>
                     <p:selectOneMenu value="#{assignCourseBean.selectedCourseId}" style="width: 225px">
                         <f:selectItem itemLabel="Select Course" itemValue=""/>
-                        <f:selectItems value="#{assignCourseBean.allCourses}" var="course" itemValue="#{course.id}" itemLabel="#{course.courseCode}-#{course.courseName}"/>
+                        <f:selectItems value="#{assignCourseBean.allCourses}" var="usercourse" itemValue="#{usercourse.id}" itemLabel="#{usercourse.courseCode}-#{usercourse.courseName}"/>
                     </p:selectOneMenu>
                 </td>
             </tr>

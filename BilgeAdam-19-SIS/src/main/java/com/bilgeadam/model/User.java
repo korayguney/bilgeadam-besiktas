@@ -20,8 +20,8 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    @ManyToMany(mappedBy = "userList", fetch = FetchType.EAGER)
-    private List<Course> courses = new ArrayList<>();
+    @OneToMany(mappedBy = "course", fetch = FetchType.EAGER)
+    private List<UserCourse> courses = new ArrayList<>();
 
     public enum Role {
         STUDENT("Student"),
@@ -98,11 +98,11 @@ public class User {
         this.role = role;
     }
 
-    public List<Course> getCourses() {
+    public List<UserCourse> getCourses() {
         return courses;
     }
 
-    public void setCourses(List<Course> courses) {
+    public void setCourses(List<UserCourse> courses) {
         this.courses = courses;
     }
 
