@@ -14,37 +14,37 @@
 <body>
 <div align="center">
     <div class="alert alert-primary" style="margin: 30px 30px 30px 30px; background-color:beige;">
-        <h1>Student Information System <br/> User Management Page </h1>
+        <h1>#{txt.head1} <br/> #{txt.head2}  </h1>
     </div>
     <div class="alert alert-primary" style="margin: 30px 30px 30px 30px; background-color:#c3e6cb;">
-        <p:button href="register.xhtml" value="Add User" />
-        <p:button href="assigncourse.xhtml" value="Assign Course To Student" />
-        <p:button href="assigncoursetoinstructor.xhtml" value="Assign Course To Instructor" />
-        <p:button href="main_operation.xhtml" value="Back" />
+        <p:button href="register.xhtml" value="#{txt.addUser}" />
+        <p:button href="assigncourse.xhtml" value="#{txt.assignCourse}" />
+        <p:button href="assigncoursetoinstructor.xhtml" value="#{txt.assignCourseInst}" />
+        <p:button href="main_operation.xhtml" value="#{txt.back}" />
     </div>
     <div class="alert alert-primary" style="margin: 30px 30px 30px 30px; padding: 30px 30px 30px 30px; background-color:#f8d7da; ">
         <h:form>
         <p:dataTable value="#{userListBean.userList}" var="usercourse">
             <f:facet name="header">
-                USER LIST
+                #{txt.userList}
             </f:facet>
 
             <p:column headerText="ID" style="width: 50px">
                 <h:outputText value="#{usercourse.id}"/>
             </p:column>
-            <p:column headerText="FIRST NAME" sortBy="#{usercourse.firstname}" filterBy="#{usercourse.firstname}">
+            <p:column headerText="#{txt.firstName}" sortBy="#{usercourse.firstname}" filterBy="#{usercourse.firstname}">
                 <h:outputText value="#{usercourse.firstname}"/>
             </p:column>
-            <p:column headerText="LAST NAME" sortBy="#{usercourse.lastname}" filterBy="#{usercourse.lastname}">
+            <p:column headerText="#{txt.lastName}" sortBy="#{usercourse.lastname}" filterBy="#{usercourse.lastname}">
                 <h:outputText value="#{usercourse.lastname}"  />
             </p:column>
-            <p:column headerText="EMAIL" sortBy="#{usercourse.email}">
+            <p:column headerText="#{txt.email}" sortBy="#{usercourse.email}">
                 <h:outputText value="#{usercourse.email}" />
             </p:column>
-            <p:column headerText="ROLE" sortBy="#{usercourse.role}">
+            <p:column headerText="#{txt.role}" sortBy="#{usercourse.role}">
                 <h:outputText value="#{usercourse.role}" />
             </p:column>
-            <p:column headerText="MANAGE USER" style="width: 300px; align-content: center">
+            <p:column headerText="#{txt.manageUser}" style="width: 300px; align-content: center">
                 <p:button href="updateuser.xhtml?userId=#{usercourse.id}" value="Update" class="btn btn-light" />
                 <p:commandButton value="Delete" action="#{userListBean.deleteUser(usercourse)}" ajax="false" class="btn btn-danger" />
             </p:column>
@@ -56,7 +56,21 @@
             <p:messages showDetail="true" autoUpdate="true" />
         </h:form>
     </div>
-
+</div>
+<div class="alert alert-primary" style="margin: 30px 30px 30px 30px; background-color:#c3e6cb; align-content: center">
+    <f:view locale="#{sessionScopeBean.lang}">
+        <h:form>
+           <p:commandLink action="#{sessionScopeBean.changeLang('tr')}" ajax="false">
+                <img src="img/tr.ico" alt="tr" width="50px" height="50px" class="center"></img>
+           </p:commandLink>
+            <p:commandLink action="#{sessionScopeBean.changeLang('de')}" ajax="false">
+                <img src="img/de.png" alt="de" width="50px" height="50px" class="center"></img>
+            </p:commandLink>
+            <p:commandLink action="#{sessionScopeBean.changeLang('en')}" ajax="false">
+                <img src="img/en.png" alt="en" width="50px" height="50px" class="center"></img>
+            </p:commandLink>
+        </h:form>
+    </f:view>
 </div>
 </body>
 </html>

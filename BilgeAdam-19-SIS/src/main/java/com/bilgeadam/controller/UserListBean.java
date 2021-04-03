@@ -15,6 +15,7 @@ public class UserListBean {
 
     private List<User> userList;
 
+
     @EJB
     private UserService userService;
 
@@ -22,6 +23,7 @@ public class UserListBean {
     public void init(){
         userList = userService.getAllUsers();
     }
+
 
     public String deleteUser(User user){
         userService.deleteUser(user);
@@ -36,5 +38,14 @@ public class UserListBean {
 
     public void setUserList(List<User> userList) {
         this.userList = userList;
+    }
+
+
+    public UserService getUserService() {
+        return userService;
+    }
+
+    public void setUserService(UserService userService) {
+        this.userService = userService;
     }
 }

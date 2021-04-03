@@ -10,6 +10,11 @@ import javax.faces.bean.SessionScoped;
 public class SessionScopeBean {
 
     private User user;
+    private String lang="en";
+
+    public void changeLang(String lang){
+        this.lang = lang;
+    }
 
     public User getUser() {
         return user;
@@ -18,4 +23,13 @@ public class SessionScopeBean {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public String getLang() {
+        return lang;
+    }
+
+    public void setLang(String lang) {
+        this.lang = lang;
+    }
+
 }

@@ -30,6 +30,7 @@
       <module name="BilgeAdam-18-jsf2" target="1.8" />
       <module name="BilgeAdam-18-jsf3" target="1.8" />
       <module name="BilgeAdam-19-SIS" target="1.8" />
+      <module name="BilgeAdam-Besiktas" target="1.8" />
       <module name="captcha" target="1.8" />
       <module name="captcha2" target="1.8" />
       <module name="demo" target="1.8" />
