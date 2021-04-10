@@ -17,54 +17,87 @@ import java.util.List;
 public class HelloController {
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String sayHello(@PathParam("name") String name, @PathParam("year") int year){
+    public String sayHello(@PathParam("name") String name, @PathParam("year") int year) {
         return "Hello from my first Spring Boot project! " + name + " " + year;
     }
 
     @GetMapping(value = "/hello/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String sayMyName(@PathVariable String name){
+    public String sayMyName(@PathVariable String name) {
         return "Hello " + name;
     }
 
     @GetMapping("/greeting/{id}")
-    public ResponseEntity<String> greeting(@RequestHeader("User-Agent") String userAgent, @PathVariable int id){
+    public ResponseEntity<String> greeting(@RequestHeader("User-Agent") String userAgent, @PathVariable int id) {
 
-        if(id > 100) {
+        if (id > 100) {
             return ResponseEntity.badRequest().body("ID cannot greater then 100");
             //return new ResponseEntity<>("ID cannot greater then 100", HttpStatus.BAD_REQUEST);
         }
 
         HttpHeaders headers = new HttpHeaders();
-        headers.add("my-custom-header","5000");
+        headers.add("my-custom-header", "5000");
 
         //return ResponseEntity.ok().headers(headers).body("Welcome...");
         //return ResponseEntity.ok("Welcome...");
-        return new ResponseEntity<>("Welcome, User-Agent : " + userAgent, headers,HttpStatus.OK);
+        return new ResponseEntity<>("Welcome, User-Agent : " + userAgent, headers, HttpStatus.OK);
     }
 
     @GetMapping("/custom")
     public void customHeader(HttpServletResponse response) throws IOException {
-        response.setHeader("custom-header","Koray");
+        response.setHeader("custom-header", "Koray");
         response.setStatus(200);
         response.getWriter().println("Hello World...");
     }
 
     @GetMapping("/students")
-    public List<Student> getStudents(){
+    public List<Student> getStudents() {
         List<Student> students = new ArrayList<>();
-        students.add(new Student(1,"Koray",111));
-        students.add(new Student(2,"Furkan",222));
-        students.add(new Student(3,"Sefa",333));
-        students.add(new Student(4,"Kaan",444));
-        students.add(new Student(5,"Veli",555));
-        students.add(new Student(6,"Oguzhan",666));
+        students.add(new Student(1, "Koray", 111));
+        students.add(new Student(2, "Furkan", 222));
+        students.add(new Student(3, "Sefa", 333));
+        students.add(new Student(4, "Kaan", 444));
+        students.add(new Student(5, "Veli", 555));
+        students.add(new Student(6, "Oguzhan", 666));
 
         return students;
     }
 
     @RequestMapping("*")
-    public ResponseEntity<String> fallBckMethod(){
-        return new ResponseEntity<>("There is no endpoint like this!!!",HttpStatus.NOT_FOUND);
+    public ResponseEntity<String> fallBckMethod() {
+        return new ResponseEntity<>("There is no endpoint like this!!!", HttpStatus.NOT_FOUND);
     }
+
+    @GetMapping("/calculate/{operation}")
+    public String calculate(@PathVariable String operation, @PathParam("num1") int num1, @PathParam("num2") int num2) {
+        int result = 0;
+        String errormsg = "";
+
+        switch (operation) {
+            case "sum":
+                operation = "+";
+                result = num1 + num2;
+                break;
+            case "subtract":
+                operation = "*";
+                result = num1 * num2;
+                break;
+            case "multiply":
+                operation = "-";
+                result = num1 - num2;
+                break;
+            case "devide":
+                operation = "/";
+                result = num1 / num2;
+                break;
+            default:
+                errormsg = "Operation is not supported!";
+                break;
+        }
+
+        if(errormsg.length() > 0) return errormsg;
+        return String.format("%d %s %d = %d", num1, operation, num2, result);
+
+    }
+
 
 }
