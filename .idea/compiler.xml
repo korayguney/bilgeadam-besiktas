@@ -2,10 +2,12 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="BilgeAdam-22-data" />
         <module name="BilgeAdam-19-SIS" />
         <module name="BilgeAdam-17-login" />
         <module name="BilgeAdam-18-jsf3" />
@@ -32,6 +34,7 @@
       <module name="BilgeAdam-18-jsf3" target="1.8" />
       <module name="BilgeAdam-19-SIS" target="1.8" />
       <module name="BilgeAdam-22" target="1.8" />
+      <module name="BilgeAdam-22-data" target="1.8" />
       <module name="BilgeAdam-Besiktas" target="1.8" />
       <module name="captcha" target="1.8" />
       <module name="captcha2" target="1.8" />
@@ -45,6 +48,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="BilgeAdam-22" options="-parameters" />
+      <module name="BilgeAdam-22-data" options="-parameters" />
     </option>
   </component>
 </project>
