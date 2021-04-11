@@ -7,18 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="BilgeAdam-22-data" />
         <module name="BilgeAdam-19-SIS" />
         <module name="BilgeAdam-17-login" />
         <module name="BilgeAdam-18-jsf3" />
         <module name="BilgeAdam-18-jsf2" />
-        <module name="BilgeAdam-16-calculator" />
         <module name="BilgeAdam-17-linkproject" />
-        <module name="BilgeAdam-18-jsf1" />
-        <module name="BilgeAdam-16-ee" />
         <module name="BilgeAdam-17-captcha1" />
         <module name="BilgeAdam-22" />
         <module name="BilgeAdam-17-captcha2" />
+        <module name="BilgeAdam-22-data-rest" />
+        <module name="BilgeAdam-22-data" />
+        <module name="BilgeAdam-16-calculator" />
+        <module name="BilgeAdam-18-jsf1" />
+        <module name="BilgeAdam-16-ee" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -35,6 +36,7 @@
       <module name="BilgeAdam-19-SIS" target="1.8" />
       <module name="BilgeAdam-22" target="1.8" />
       <module name="BilgeAdam-22-data" target="1.8" />
+      <module name="BilgeAdam-22-data-rest" target="1.8" />
       <module name="BilgeAdam-Besiktas" target="1.8" />
       <module name="captcha" target="1.8" />
       <module name="captcha2" target="1.8" />
@@ -49,6 +51,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="BilgeAdam-22" options="-parameters" />
       <module name="BilgeAdam-22-data" options="-parameters" />
+      <module name="BilgeAdam-22-data-rest" options="-parameters" />
     </option>
   </component>
 </project>
