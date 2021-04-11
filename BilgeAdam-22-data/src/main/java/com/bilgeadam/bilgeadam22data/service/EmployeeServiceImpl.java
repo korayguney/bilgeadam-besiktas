@@ -3,6 +3,7 @@ package com.bilgeadam.bilgeadam22data.service;
 import com.bilgeadam.bilgeadam22data.dao.EmployeeDAO;
 import com.bilgeadam.bilgeadam22data.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,7 +15,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     private EmployeeDAO employeeDAO;
 
     @Autowired
-    public EmployeeServiceImpl(EmployeeDAO employeeDAO) {
+    public EmployeeServiceImpl(@Qualifier("employeeDAOHibernateImpl") EmployeeDAO employeeDAO) {
         this.employeeDAO = employeeDAO;
     }
 
