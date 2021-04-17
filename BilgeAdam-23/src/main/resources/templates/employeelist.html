@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Employee List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h3>Employee List</h3>
+        <br>
+        <table class="table">
+            <thead class="thead-dark">
+                <th>Id</th>
+                <th>First name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+            </thead>
+            <tbody>
+                <tr th:each="emp: ${employees}">
+                    <td th:text="${emp.id}"></td>
+                    <td th:text="${emp.firstName}"></td>
+                    <td th:text="${emp.secondName}"></td>
+                    <td th:text="${emp.email}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

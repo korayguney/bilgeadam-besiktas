@@ -3,6 +3,7 @@ package com.bilgeadam.bilgeadam22data.dao;
 import com.bilgeadam.bilgeadam22data.model.Employee;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
