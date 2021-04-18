@@ -1,9 +1,7 @@
 package com.bilgeadam.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
+import org.springframework.format.annotation.NumberFormat;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,6 +15,7 @@ import javax.validation.constraints.NotBlank;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Entity
 public class User {
     @Id
@@ -27,11 +26,12 @@ public class User {
     private String name;
 
     @NotBlank(message = "Email is mandatory")
-    @Email
+    @Email(message = "Email format is wrong!")
     private String email;
 
-    @Min(0)
-    @Max(120)
-    private int age;
+    @Min(value = 0, message = "The age cannot be less than 0")
+    @Max(value = 120, message = "The age cannot be greater than 0")
+    @NumberFormat(style = NumberFormat.Style.NUMBER)
+    private Integer age;
 
 }
