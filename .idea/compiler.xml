@@ -7,24 +7,40 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="bilgeadam-22-data" />
         <module name="BilgeAdam-19-SIS" />
         <module name="BilgeAdam-17-login" />
         <module name="BilgeAdam-18-jsf3" />
+        <module name="servlet" />
         <module name="BilgeAdam-18-jsf2" />
+        <module name="bilgeadam-23-02" />
+        <module name="BilgeAdam-23-02" />
+        <module name="BilgeAdam-23-restclient" />
+        <module name="captcha" />
+        <module name="BilgeAdam-23-data" />
+        <module name="bilgeadam-22-data-rest" />
+        <module name="sis" />
+        <module name="calculator" />
+        <module name="bilgedam-23-restclient" />
+        <module name="jsf2" />
+        <module name="jsf1" />
+        <module name="jsf3" />
         <module name="BilgeAdam-17-linkproject" />
+        <module name="bilgeadam-22" />
+        <module name="bilgeadam-23-data" />
         <module name="BilgeAdam-17-captcha1" />
         <module name="BilgeAdam-23" />
         <module name="BilgeAdam-22" />
         <module name="BilgeAdam-17-captcha2" />
+        <module name="bilgeadamlogin" />
         <module name="BilgeAdam-22-data-rest" />
+        <module name="linkproject" />
+        <module name="bilgeadam-23" />
+        <module name="bilgeadam-24-e-commerce" />
         <module name="BilgeAdam-22-data" />
-        <module name="BilgeAdam-23-02" />
-        <module name="BilgeAdam-23-restclient" />
         <module name="BilgeAdam-16-calculator" />
         <module name="BilgeAdam-18-jsf1" />
         <module name="BilgeAdam-16-ee" />
-        <module name="BilgeAdam-23-data" />
-        <module name="BilgeAdam-24-e-commerce" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -39,21 +55,36 @@
       <module name="BilgeAdam-18-jsf2" target="1.8" />
       <module name="BilgeAdam-18-jsf3" target="1.8" />
       <module name="BilgeAdam-19-SIS" target="1.8" />
+      <module name="bilgeadam-22" target="1.8" />
       <module name="BilgeAdam-22" target="1.8" />
+      <module name="bilgeadam-22-data" target="1.8" />
       <module name="BilgeAdam-22-data" target="1.8" />
+      <module name="bilgeadam-22-data-rest" target="1.8" />
       <module name="BilgeAdam-22-data-rest" target="1.8" />
       <module name="BilgeAdam-23" target="1.8" />
+      <module name="bilgeadam-23" target="1.8" />
+      <module name="bilgeadam-23-02" target="1.8" />
       <module name="BilgeAdam-23-02" target="1.8" />
       <module name="BilgeAdam-23-data" target="1.8" />
+      <module name="bilgeadam-23-data" target="1.8" />
       <module name="BilgeAdam-23-restclient" target="1.8" />
-      <module name="BilgeAdam-24-e-commerce" target="1.8" />
+      <module name="bilgeadam-24-e-commerce" target="1.8" />
       <module name="BilgeAdam-Besiktas" target="1.8" />
+      <module name="bilgeadamlogin" target="1.8" />
+      <module name="bilgedam-23-restclient" target="1.8" />
+      <module name="calculator" target="1.8" />
       <module name="captcha" target="1.8" />
       <module name="captcha2" target="1.8" />
       <module name="demo" target="1.8" />
       <module name="demo1" target="1.8" />
       <module name="demo111" target="1.8" />
+      <module name="jsf1" target="1.8" />
+      <module name="jsf2" target="1.8" />
+      <module name="jsf3" target="1.8" />
+      <module name="linkproject" target="1.8" />
       <module name="login" target="1.8" />
+      <module name="servlet" target="1.8" />
+      <module name="sis" target="1.8" />
       <module name="testlogin" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -66,7 +97,14 @@
       <module name="BilgeAdam-23-02" options="-parameters" />
       <module name="BilgeAdam-23-data" options="-parameters" />
       <module name="BilgeAdam-23-restclient" options="-parameters" />
-      <module name="BilgeAdam-24-e-commerce" options="-parameters" />
+      <module name="bilgeadam-22" options="-parameters" />
+      <module name="bilgeadam-22-data" options="-parameters" />
+      <module name="bilgeadam-22-data-rest" options="-parameters" />
+      <module name="bilgeadam-23" options="-parameters" />
+      <module name="bilgeadam-23-02" options="-parameters" />
+      <module name="bilgeadam-23-data" options="-parameters" />
+      <module name="bilgeadam-24-e-commerce" options="-parameters" />
+      <module name="bilgedam-23-restclient" options="-parameters" />
     </option>
   </component>
 </project>

@@ -22,6 +22,8 @@ public class Cart extends AbstractEntity {
 
     private Double cartTotalPrice;
 
+    private Integer cartNo;
+
     public Cart(Customer customer) {
         this.customer = customer;
         this.status = CartStatus.NEW;
