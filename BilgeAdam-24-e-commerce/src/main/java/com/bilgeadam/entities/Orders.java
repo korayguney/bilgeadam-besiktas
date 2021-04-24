@@ -15,9 +15,7 @@ import java.util.Date;
 public class Orders extends AbstractEntity{
 
     @Embedded
-    private Address address1;
-    @Embedded
-    private Address address2;
+    private Address address;
 
     private Date shipped;
 
