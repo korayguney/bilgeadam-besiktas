@@ -4,10 +4,7 @@ package com.bilgeadam.entities;
 import com.bilgeadam.entities.enums.CartStatus;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Data
@@ -20,6 +17,16 @@ public class Cart extends AbstractEntity {
     @Enumerated(EnumType.STRING)
     private CartStatus status;
 
+    @ManyToOne
+    private Customer customer;
 
+    public Cart(Customer customer) {
+        this.customer = customer;
+        this.status = CartStatus.NEW;
+    }
 
+    public Cart(@NotNull CartStatus status, Customer customer) {
+        this.customer = customer;
+        this.status = status;
+    }
 }
