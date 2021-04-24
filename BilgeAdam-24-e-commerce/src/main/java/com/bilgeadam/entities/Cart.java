@@ -20,6 +20,8 @@ public class Cart extends AbstractEntity {
     @ManyToOne
     private Customer customer;
 
+    private Integer cartNo;
+
     public Cart(Customer customer) {
         this.customer = customer;
         this.status = CartStatus.NEW;
