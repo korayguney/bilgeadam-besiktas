@@ -1,9 +1,9 @@
 package com.bilgeadam.repository;
 
-import com.bilgeadam.entities.OrderItems;
+import com.bilgeadam.entities.OrderItem;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface OrderItemsRepository extends CrudRepository<OrderItems,Long> {
+public interface OrderItemRepository extends CrudRepository<OrderItem,Long> {
 }

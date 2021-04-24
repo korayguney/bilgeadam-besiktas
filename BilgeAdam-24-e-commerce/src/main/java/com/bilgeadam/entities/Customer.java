@@ -3,6 +3,7 @@ package com.bilgeadam.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -15,22 +16,33 @@ import java.util.Set;
 @Entity
 @Table(name = "customers")
 public class Customer extends AbstractEntity {
-    private String firstname;
-    private String lastname;
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
+
     @Email
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "telephone")
     private String telephone;
-    private boolean enabled;
+
+    @Column(name = "enabled", nullable = false)
+    private Boolean enabled;
 
     @OneToMany(mappedBy = "customer")
     @JsonIgnore
     private Set<Cart> carts;
 
-    public Customer(String firstname, String lastname, @Email String email, String telephone, boolean enabled) {
-        this.firstname = firstname;
-        this.lastname = lastname;
+    public Customer(String firstName, String lastName, @Email String email,
+                    String telephone, Set<Cart> carts, Boolean enabled) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.telephone = telephone;
+        this.carts = carts;
         this.enabled = enabled;
     }
 

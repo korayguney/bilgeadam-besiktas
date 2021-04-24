@@ -20,6 +20,7 @@
         <module name="BilgeAdam-23-data" />
         <module name="bilgeadam-22-data-rest" />
         <module name="sis" />
+        <module name="BilgeAdam-24-e-commerce" />
         <module name="calculator" />
         <module name="bilgedam-23-restclient" />
         <module name="jsf2" />
@@ -68,6 +69,7 @@
       <module name="BilgeAdam-23-data" target="1.8" />
       <module name="bilgeadam-23-data" target="1.8" />
       <module name="BilgeAdam-23-restclient" target="1.8" />
+      <module name="BilgeAdam-24-e-commerce" target="1.8" />
       <module name="bilgeadam-24-e-commerce" target="1.8" />
       <module name="BilgeAdam-Besiktas" target="1.8" />
       <module name="bilgeadamlogin" target="1.8" />
@@ -97,6 +99,7 @@
       <module name="BilgeAdam-23-02" options="-parameters" />
       <module name="BilgeAdam-23-data" options="-parameters" />
       <module name="BilgeAdam-23-restclient" options="-parameters" />
+      <module name="BilgeAdam-24-e-commerce" options="-parameters" />
       <module name="bilgeadam-22" options="-parameters" />
       <module name="bilgeadam-22-data" options="-parameters" />
       <module name="bilgeadam-22-data-rest" options="-parameters" />
