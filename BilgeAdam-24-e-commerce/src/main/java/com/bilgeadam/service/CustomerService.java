@@ -50,4 +50,22 @@ public class CustomerService {
                 )
         ));
     }
+
+    public CustomerDTO findById(Long id) {
+        return this.repository.findById(id).map(CustomerService::mapToDTO).orElse(null);
+    }
+
+    public void delete(Long id) {
+        Customer customer = this.repository.findById(id).orElseThrow(()->new IllegalArgumentException("Cannot find Customer with id : " + id));
+        customer.setEnabled(false);
+        this.repository.save(customer);
+    }
+
+    public List<CustomerDTO> findAllInactive() {
+        return this.repository.findAllByEnabled(false).stream().map(CustomerService::mapToDTO).collect(Collectors.toList());
+    }
+
+    public List<CustomerDTO> findAllActive() {
+        return this.repository.findAllByEnabled(true).stream().map(CustomerService::mapToDTO).collect(Collectors.toList());
+    }
 }

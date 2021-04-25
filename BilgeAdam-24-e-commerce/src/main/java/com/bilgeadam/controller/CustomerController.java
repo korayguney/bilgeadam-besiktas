@@ -3,10 +3,7 @@ package com.bilgeadam.controller;
 import com.bilgeadam.controller.dto.CustomerDTO;
 import com.bilgeadam.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,6 +21,26 @@ public class CustomerController {
     @GetMapping
     public List<CustomerDTO> findAll(){
         return customerService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public CustomerDTO findById(@PathVariable Long id){
+        return customerService.findById(id);
+    }
+
+    @GetMapping("/inactive")
+    public List<CustomerDTO> findAllInactive(){
+        return customerService.findAllInactive();
+    }
+
+    @GetMapping("/active")
+    public List<CustomerDTO> findAllActive(){
+        return customerService.findAllActive();
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Long id){
+        customerService.delete(id);
     }
 
     @PostMapping
