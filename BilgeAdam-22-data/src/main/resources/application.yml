@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/employee_directory?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    driver-class: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1234
