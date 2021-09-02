@@ -2,6 +2,8 @@ package com.bilgeadam.bilgeadam22data.controller;
 
 import com.bilgeadam.bilgeadam22data.model.Employee;
 import com.bilgeadam.bilgeadam22data.service.EmployeeService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class EmployeeController {
-
+    private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
     private EmployeeService employeeService;
 
     @Autowired
@@ -58,6 +60,7 @@ public class EmployeeController {
     public ResponseEntity<String> deleteEmployee(@PathVariable int empId){
         Employee emp = employeeService.findById(empId);
         if(emp == null) {
+            logger.error("Not found");
             System.out.println("NOT FOUND");
             return new ResponseEntity<>("Id Not Found -" + empId, HttpStatus.NOT_FOUND);
         }

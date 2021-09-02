@@ -27,7 +27,7 @@ public class UserController {
     }
 
     @GetMapping("/index")
-    public String showUserList(Model theModel, HttpSession session, @RequestHeader("Sec-Fetch-Dest") String language){
+    public String showUserList(Model theModel){
         theModel.addAttribute("users",userRepository.findAll());
         return "index";
     }

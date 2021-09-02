@@ -18,17 +18,24 @@ import java.util.List;
 @RequestMapping(value = "/api")
 public class HelloController {
 
-    @Value("${developer.name}")
+    List<Student> students = new ArrayList<>();
+
+    // -Dproperty.name=value1
+    // --property="value"
+    @Value("${developer.name:Ahmet}")
     private String nameOfDeveloper;
+
+    @Value("${developer.lastname}")
+    private String lastnameOfDeveloper;
 
     @GetMapping("/developer")
     public String getNameOfDeveloper(){
-        return " Developer name : " + nameOfDeveloper;
+        return " Developer name : " + nameOfDeveloper + " " + lastnameOfDeveloper;
     }
 
     // produces = MediaType.APPLICATION_XML_VALUE ile de dene
     @RequestMapping(value = "/hello", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
+    @ResponseStatus(value = HttpStatus.I_AM_A_TEAPOT)
     public StringResponse sayHello(@RequestParam String name, @PathParam("year") int year) {
         return new StringResponse("Hello from my first Spring Boot project! " + name + " " + year);
     }
@@ -67,7 +74,7 @@ public class HelloController {
 
     @GetMapping("/students")
     public List<Student> getStudents() {
-        List<Student> students = new ArrayList<>();
+
         students.add(new Student(1, "Koray", 111));
         students.add(new Student(2, "Furkan", 222));
         students.add(new Student(3, "Sefa", 333));
@@ -75,6 +82,13 @@ public class HelloController {
         students.add(new Student(5, "Veli", 555));
         students.add(new Student(6, "Oguzhan", 666));
 
+        return students;
+    }
+
+    @PostMapping("/students")
+    public List<Student> getStudents(@RequestBody Student student) {
+        //List<Student> students = new ArrayList<>();
+        students.add(student);
         return students;
     }
 

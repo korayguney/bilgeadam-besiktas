@@ -3,10 +3,8 @@ package com.bilgeadam.controller;
 import com.bilgeadam.model.Employee;
 import com.bilgeadam.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -39,6 +37,13 @@ public class EmployeeController {
     @GetMapping("/employees/searchAgeLess/{age}")
     public List<Employee> searchEmployeeByAgeLessThanOrderBy(@PathVariable Integer age){
         return repository.findFirst3ByAgeLessThanOrderByLastNameAsc(age);
+    }
+
+    @Transactional
+    @DeleteMapping("/employees/{email}")
+    public String deleteEmployeeWİthEmail(@PathVariable String email){
+        repository.deleteByEmail(email);
+        return "Deleted...";
     }
 
     @GetMapping("/getNumberOfEmployees")

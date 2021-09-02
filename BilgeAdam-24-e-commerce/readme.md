@@ -23,7 +23,8 @@ How to test endpoints:
 
   `curl -X POST "http://localhost:8080/api/users/sign-up" -H "accept: */*" -H "Content-Type: application/json" -d "{ "password": "koray", "username": "pass"}"`
   
-* After sign-up, it is necessary to login for get a valid JWT token. Token will be inside of headers (with "Authorization" key)
+* After sign-up, it is necessary to login for get a valid JWT token. To do this; send a POST request with signed up user to; http://localhost:8080/login
+* Token will be inside of headers (with "Authorization" key)
 
 
 * After getting a valid token, it would be used on swagger. To access the Swagger UI;
