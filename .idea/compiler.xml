@@ -46,6 +46,12 @@
         <module name="BilgeAdam-18-jsf1" />
         <module name="BilgeAdam-16-ee" />
       </profile>
+      <profile name="Annotation profile for BilgeAdam-mongodb" enabled="true">
+        <sourceOutputDir name="../mongodb/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../mongodb/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mongodb" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="BilgeAdam-16-calculator" target="1.8" />
@@ -90,6 +96,7 @@
       <module name="jsf3" target="1.8" />
       <module name="linkproject" target="1.8" />
       <module name="login" target="1.8" />
+      <module name="mongodb" target="1.8" />
       <module name="servlet" target="1.8" />
       <module name="sis" target="1.8" />
       <module name="testlogin" target="1.8" />
@@ -116,6 +123,7 @@
       <module name="bilgeadam25" options="-parameters" />
       <module name="bilgedam-23-restclient" options="-parameters" />
       <module name="demo1" options="-parameters" />
+      <module name="mongodb" options="-parameters" />
     </option>
   </component>
 </project>
